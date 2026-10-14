@@ -71,6 +71,7 @@ $$
 \end{pmatrix}
 $$
 
+
 ### 2. Calculate A(BC)
 
 First, calculate BC:
@@ -78,18 +79,21 @@ First, calculate BC:
 $$
 BC =
 \begin{pmatrix}
-1 & 0\\
-2 & 1\\
+1 & 0 \\
+2 & 1 \\
 -1 & 3
 \end{pmatrix}
 \begin{pmatrix}
-2 & 1\\
+2 & 1 \\
 0 & -1
 \end{pmatrix}
-=
+$$
+
+$$
+BC =
 \begin{pmatrix}
-2 & 1\\
-4 & 1\\
+2 & 1 \\
+4 & 1 \\
 -2 & -4
 \end{pmatrix}
 $$
@@ -99,12 +103,12 @@ Then multiply by A:
 $$
 A(BC) =
 \begin{pmatrix}
-1 & 2 & 0\\
+1 & 2 & 0 \\
 0 & 1 & 1
 \end{pmatrix}
 \begin{pmatrix}
-2 & 1\\
-4 & 1\\
+2 & 1 \\
+4 & 1 \\
 -2 & -4
 \end{pmatrix}
 $$
@@ -112,10 +116,11 @@ $$
 $$
 A(BC) =
 \begin{pmatrix}
-10 & 3\\
+10 & 3 \\
 2 & -3
 \end{pmatrix}
 $$
+
 
 ### 3. Compare Calculation Paths
 
