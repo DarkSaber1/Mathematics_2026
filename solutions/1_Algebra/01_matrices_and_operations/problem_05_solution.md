@@ -25,9 +25,10 @@ x =
 \end{pmatrix}
 $$
 
+
 ### 1. Calculate Ax
 
-Multiply each row of A by the vector x:
+Multiply each row of A by the vector x.
 
 $$
 Ax =
@@ -55,12 +56,16 @@ Ax =
 8-2 \\
 4+6
 \end{pmatrix}
-=
+$$
+
+$$
+Ax =
 \begin{pmatrix}
 6 \\
 10
 \end{pmatrix}
 $$
+
 
 ### 2. Linear Combination
 

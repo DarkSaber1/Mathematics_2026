@@ -55,7 +55,10 @@ Sx =
 2(1)+0(2) \\
 0(1)+1(2)
 \end{pmatrix}
-=
+$$
+
+$$
+Sx =
 \begin{pmatrix}
 2 \\
 2
@@ -82,7 +85,10 @@ RSx =
 0(2)-1(2) \\
 1(2)+0(2)
 \end{pmatrix}
-=
+$$
+
+$$
+RSx =
 \begin{pmatrix}
 -2 \\
 2
@@ -111,7 +117,10 @@ Rx =
 0(1)-1(2) \\
 1(1)+0(2)
 \end{pmatrix}
-=
+$$
+
+$$
+Rx =
 \begin{pmatrix}
 -2 \\
 1
@@ -138,7 +147,10 @@ SRx =
 2(-2)+0(1) \\
 0(-2)+1(1)
 \end{pmatrix}
-=
+$$
+
+$$
+SRx =
 \begin{pmatrix}
 -4 \\
 1
@@ -151,11 +163,11 @@ Matrix S doubles the horizontal coordinate while keeping the vertical coordinate
 
 Matrix R rotates a vector 90 degrees counterclockwise.
 
-In RSx, scaling happens before rotation.
+In RSx, scaling is applied before rotation.
 
-In SRx, rotation happens before scaling.
+In SRx, rotation is applied before scaling.
 
-The results differ because rotation changes the direction along which scaling is applied.
+The order matters because rotation changes the direction in which scaling is applied.
 
 ## Verification
 
@@ -177,7 +189,7 @@ SRx =
 \end{pmatrix}
 $$
 
-Since the vectors are different:
+Since the results are different:
 
 $$
 RSx \neq SRx

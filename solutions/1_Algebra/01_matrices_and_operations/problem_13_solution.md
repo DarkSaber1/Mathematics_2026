@@ -185,13 +185,16 @@ $$
 f_{n+1}=f_n+f_{n-1}
 $$
 
+
 ## Verification
 
 Using two consecutive Fibonacci numbers:
 
 $$
-a=3,\quad b=2
+a = 3, \qquad b = 2
 $$
+
+Multiply the vector by F:
 
 $$
 F
@@ -210,8 +213,9 @@ F
 \end{pmatrix}
 $$
 
+The result is:
+
 $$
-=
 \begin{pmatrix}
 5 \\
 3
@@ -220,54 +224,45 @@ $$
 
 The next Fibonacci number is 5, so the recurrence works correctly.
 
-Also, F⁵ contains the consecutive Fibonacci numbers 8, 5, and 3.
+Also, the fifth power of F contains the consecutive Fibonacci numbers 8, 5, and 3.
 
 ## Final Answer
 
 $$
-\boxed{
 F^2 =
 \begin{pmatrix}
 2 & 1 \\
 1 & 1
 \end{pmatrix}
-}
 $$
 
 $$
-\boxed{
 F^3 =
 \begin{pmatrix}
 3 & 2 \\
 2 & 1
 \end{pmatrix}
-}
 $$
 
 $$
-\boxed{
 F^4 =
 \begin{pmatrix}
 5 & 3 \\
 3 & 2
 \end{pmatrix}
-}
 $$
 
 $$
-\boxed{
 F^5 =
 \begin{pmatrix}
 8 & 5 \\
 5 & 3
 \end{pmatrix}
-}
 $$
 
 The recurrence step is:
 
 $$
-\boxed{
 F
 \begin{pmatrix}
 a \\
@@ -278,5 +273,4 @@ b
 a+b \\
 a
 \end{pmatrix}
-}
 $$
