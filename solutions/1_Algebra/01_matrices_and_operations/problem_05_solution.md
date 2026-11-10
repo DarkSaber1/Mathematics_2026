@@ -68,9 +68,18 @@ Matrix-vector multiplication can be interpreted in two equivalent ways:
 
 ### Verification
 
-Comparing the results from both calculation methods:
+We compare the results obtained from both calculation methods:
 
-- **Row dot product method:** $\begin{pmatrix} 6 \\ 10 \end{pmatrix}$
-- **Column linear combination method:** $4 \begin{pmatrix} 2 \\ 1 \end{pmatrix} + 2 \begin{pmatrix} -1 \\ 3 \end{pmatrix} = \begin{pmatrix} 6 \\ 10 \end{pmatrix}$
+- **Row dot product method:**
 
-Both methods yield identical vectors, verifying the calculation.
+$$
+Ax = \begin{pmatrix} 6 \\ 10 \end{pmatrix}
+$$
+
+- **Column linear combination method:**
+
+$$
+4 a_1 + 2 a_2 = 4 \begin{pmatrix} 2 \\ 1 \end{pmatrix} + 2 \begin{pmatrix} -1 \\ 3 \end{pmatrix} = \begin{pmatrix} 6 \\ 10 \end{pmatrix}
+$$
+
+Both methods yield identical vectors, verifying that the calculation is correct.
