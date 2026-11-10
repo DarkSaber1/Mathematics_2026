@@ -1,13 +1,31 @@
-
 # Exercise 8 – Row Operations and Their Reversibility
 
 ## Problem Statement
 
-Perform the three given row operations in order, write the matrix after each step, and identify the inverse of each operation.
+For
+
+$$
+A=
+\begin{pmatrix}
+1 & 2 & -1 \\
+2 & 4 & 1 \\
+-1 & 1 & 3 \\
+\end{pmatrix}
+$$
+
+perform, in order:
+
+1. $R_2\leftarrow R_2-2R_1$,
+2. $R_3\leftarrow R_3+R_1$,
+3. interchange $R_2$ and $R_3$.
+
+Write the matrix after each step. Then, for each of the three operations, state an operation that reverses it.
 
 ## Solution
 
-Given:
+### 1. Sequential Elementary Row Operations
+
+Starting with the initial matrix:
 
 $$
 A = \begin{pmatrix}
@@ -17,15 +35,8 @@ A = \begin{pmatrix}
 \end{pmatrix}
 $$
 
-### 1. First Row Operation
-
-Apply $R_2 \leftarrow R_2 - 2R_1$.
-
-$$
-R_2 = (2,4,1)-2(1,2,-1)=(0,0,3)
-$$
-
-The new matrix is:
+- **Step 1:** $R_2 \leftarrow R_2 - 2R_1$  
+  Computing the new row 2: $(2, 4, 1) - 2(1, 2, -1) = (0, 0, 3)$.
 
 $$
 A_1 = \begin{pmatrix}
@@ -35,15 +46,8 @@ A_1 = \begin{pmatrix}
 \end{pmatrix}
 $$
 
-### 2. Second Row Operation
-
-Apply $R_3 \leftarrow R_3 + R_1$.
-
-$$
-R_3 = (-1,1,3)+(1,2,-1)=(0,3,2)
-$$
-
-The new matrix is:
+- **Step 2:** $R_3 \leftarrow R_3 + R_1$  
+  Computing the new row 3: $(-1, 1, 3) + (1, 2, -1) = (0, 3, 2)$.
 
 $$
 A_2 = \begin{pmatrix}
@@ -53,11 +57,7 @@ A_2 = \begin{pmatrix}
 \end{pmatrix}
 $$
 
-### 3. Third Row Operation
-
-Interchange $R_2$ and $R_3$.
-
-The final matrix is:
+- **Step 3:** Interchange $R_2$ and $R_3$ ($R_2 \leftrightarrow R_3$)
 
 $$
 A_3 = \begin{pmatrix}
@@ -67,72 +67,63 @@ A_3 = \begin{pmatrix}
 \end{pmatrix}
 $$
 
-## Explanation
+### 2. Reversing the Operations
 
-Elementary row operations change the rows of a matrix without losing information.
+Each elementary row operation can be undone using an inverse operation:
 
-Each operation can be reversed:
+1. The inverse of $R_2 \leftarrow R_2 - 2R_1$ is **$R_2 \leftarrow R_2 + 2R_1$**.
+2. The inverse of $R_3 \leftarrow R_3 + R_1$ is **$R_3 \leftarrow R_3 - R_1$**.
+3. The inverse of interchanging $R_2$ and $R_3$ is **interchanging $R_2$ and $R_3$ again** ($R_2 \leftrightarrow R_3$).
 
-1. $R_2 \leftarrow R_2 - 2R_1$
+### Explanation
 
-   Inverse: $R_2 \leftarrow R_2 + 2R_1$
+Elementary row operations preserve the row space of a matrix. Because every elementary row operation is reversible, applying the inverse operations in reverse chronological order restores the original matrix.
 
-2. $R_3 \leftarrow R_3 + R_1$
+### Verification
 
-   Inverse: $R_3 \leftarrow R_3 - R_1$
+We apply the inverse operations to $A_3$ in reverse order (Step 3 $\rightarrow$ Step 2 $\rightarrow$ Step 1):
 
-3. Swap $R_2$ and $R_3$.
-
-   Inverse: Swap $R_2$ and $R_3$ again.
-
-## Verification
-
-Starting from $A_3$, reverse the operations in the opposite order.
-
-First, swap rows 2 and 3:
+1. Interchange $R_2$ and $R_3$ on $A_3$:
 
 $$
-\begin{pmatrix}
-1&2&-1\\
-0&0&3\\
-0&3&2
-\end{pmatrix}
-$$
-
-Then subtract row 1 from row 3:
-
-$$
-\begin{pmatrix}
-1&2&-1\\
-0&0&3\\
--1&1&3
-\end{pmatrix}
-$$
-
-Finally, add twice row 1 to row 2:
-
-$$
-\begin{pmatrix}
-1&2&-1\\
-2&4&1\\
--1&1&3
-\end{pmatrix}
-=A
-$$
-
-The original matrix is recovered.
-
-## Final Answer
-
-$$
-\boxed{
-A_3 =
 \begin{pmatrix}
 1 & 2 & -1 \\
-0 & 3 & 2 \\
-0 & 0 & 3
+0 & 0 & 3 \\
+0 & 3 & 2
 \end{pmatrix}
-}
 $$
 
-All three row operations are reversible.
+2. Apply $R_3 \leftarrow R_3 - R_1$:
+
+$$
+\begin{pmatrix}
+1 & 2 & -1 \\
+0 & 0 & 3 \\
+(0-1) & (3-2) & (2-(-1))
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 & 2 & -1 \\
+0 & 0 & 3 \\
+-1 & 1 & 3
+\end{pmatrix}
+$$
+
+3. Apply $R_2 \leftarrow R_2 + 2R_1$:
+
+$$
+\begin{pmatrix}
+1 & 2 & -1 \\
+(0+2(1)) & (0+2(2)) & (3+2(-1)) \\
+-1 & 1 & 3
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 & 2 & -1 \\
+2 & 4 & 1 \\
+-1 & 1 & 3
+\end{pmatrix}
+= A
+$$
+
+Since the original matrix $A$ is completely recovered, all operations and their inverses are correct.

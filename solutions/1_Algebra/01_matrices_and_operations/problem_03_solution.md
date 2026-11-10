@@ -1,69 +1,49 @@
-
 # Exercise 3 – When Can Matrices Be Multiplied?
 
 ## Problem Statement
 
-Determine whether the matrix products AB, BA, BC, CB, AC, CA, AD, and DA are possible. State the dimensions of each valid result.
+The matrix sizes are given as:
+
+$$
+A_{2\times3},\qquad B_{3\times4},\qquad C_{4\times2},\qquad D_{2\times2}
+$$
+
+For the products:
+
+$$
+AB,\ BA,\ BC,\ CB,\ AC,\ CA,\ AD,\ DA
+$$
+
+determine whether they are defined. If so, state the size of the result. Justify each decision using the dimension compatibility condition.
 
 ## Solution
 
-Given matrix dimensions:
+### 1. Dimension Compatibility Rule
 
-- A = 2 x 3
-- B = 3 x 4
-- C = 4 x 2
-- D = 2 x 2
+Matrix multiplication $M_{m \times n} \cdot N_{p \times q}$ is defined if and only if the number of columns in the first matrix equals the number of rows in the second matrix ($n = p$). When this condition is met, the resulting matrix has dimensions $m \times q$.
 
-### 1. Checking Matrix Products
+### 2. Evaluation of Matrix Products
 
-| Product | Dimensions | Possible? | Result |
-|---------|------------|-----------|--------|
-| AB | (2x3)(3x4) | Yes | 2x4 |
-| BA | (3x4)(2x3) | No | Undefined |
-| BC | (3x4)(4x2) | Yes | 3x2 |
-| CB | (4x2)(3x4) | No | Undefined |
-| AC | (2x3)(4x2) | No | Undefined |
-| CA | (4x2)(2x3) | Yes | 4x3 |
-| AD | (2x3)(2x2) | No | Undefined |
-| DA | (2x2)(2x3) | Yes | 2x3 |
+| Product | Inner Dimensions Check | Compatibility | Result Size |
+| :--- | :--- | :--- | :--- |
+| **$AB$** | $A_{2\times 3} \cdot B_{3\times 4} \implies 3 = 3$ | Defined | $2 \times 4$ |
+| **$BA$** | $B_{3\times 4} \cdot A_{2\times 3} \implies 4 \neq 2$ | Undefined | — |
+| **$BC$** | $B_{3\times 4} \cdot C_{4\times 2} \implies 4 = 4$ | Defined | $3 \times 2$ |
+| **$CB$** | $C_{4\times 2} \cdot B_{3\times 4} \implies 2 \neq 3$ | Undefined | — |
+| **$AC$** | $A_{2\times 3} \cdot C_{4\times 2} \implies 3 \neq 4$ | Undefined | — |
+| **$CA$** | $C_{4\times 2} \cdot A_{2\times 3} \implies 2 = 2$ | Defined | $4 \times 3$ |
+| **$AD$** | $A_{2\times 3} \cdot D_{2\times 2} \implies 3 \neq 2$ | Undefined | — |
+| **$DA$** | $D_{2\times 2} \cdot A_{2\times 3} \implies 2 = 2$ | Defined | $2 \times 3$ |
 
-## Explanation
+### Verification
 
-Matrix multiplication is possible only when the number of columns in the first matrix equals the number of rows in the second matrix.
+We verify each case by checking the equality of inner dimensions:
 
-The resulting matrix has the number of rows of the first matrix and the number of columns of the second matrix.
-
-For example:
-
-$$
-(2 \times 3)(3 \times 4) = 2 \times 4
-$$
-
-Since the inner dimensions (3 and 3) match, AB is defined.
-
-## Verification
-
-The valid products are:
-
-- AB: 3 = 3
-- BC: 4 = 4
-- CA: 2 = 2
-- DA: 2 = 2
-
-All other products have unequal inner dimensions, so they cannot be multiplied.
-
-## Final Answer
-
-**Defined products:**
-
-- AB = 2 x 4
-- BC = 3 x 2
-- CA = 4 x 3
-- DA = 2 x 3
-
-**Undefined products:**
-
-- BA
-- CB
-- AC
-- AD
+- **$AB$**: Inner dimensions are $3$ and $3$. Since $3 = 3$, $AB$ is valid with size $2 \times 4$.
+- **$BA$**: Inner dimensions are $4$ and $2$. Since $4 \neq 2$, $BA$ is invalid.
+- **$BC$**: Inner dimensions are $4$ and $4$. Since $4 = 4$, $BC$ is valid with size $3 \times 2$.
+- **$CB$**: Inner dimensions are $2$ and $3$. Since $2 \neq 3$, $CB$ is invalid.
+- **$AC$**: Inner dimensions are $3$ and $4$. Since $3 \neq 4$, $AC$ is invalid.
+- **$CA$**: Inner dimensions are $2$ and $2$. Since $2 = 2$, $CA$ is valid with size $4 \times 3$.
+- **$AD$**: Inner dimensions are $3$ and $2$. Since $3 \neq 2$, $AD$ is invalid.
+- **$DA$**: Inner dimensions are $2$ and $2$. Since $2 = 2$, $DA$ is valid with size $2 \times 3$.

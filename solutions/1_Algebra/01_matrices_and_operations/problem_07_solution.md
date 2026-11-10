@@ -1,125 +1,84 @@
-
 # Exercise 7 – Identity Matrix, Zero Matrix, and Powers
 
 ## Problem Statement
 
-Given matrix A, calculate AI, IA, A+0, A², and A³. Explain the roles of the identity and zero matrices and describe the pattern in the powers of A.
+For
+
+$$
+A=
+\begin{pmatrix}
+2 & 1 \\
+0 & 2 \\
+\end{pmatrix}
+$$
+
+compute
+
+$$
+AI,\qquad IA,\qquad A+0,\qquad A^2,\qquad A^3.
+$$
+
+Explain the roles of the matrices $I$ and $0$, and describe the pattern you observe in successive powers of $A$.
 
 ## Solution
 
-Given:
+### 1. Operations with Identity Matrix $I$ and Zero Matrix $0$
+
+Let $I = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$ be the $2 \times 2$ identity matrix and $0 = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}$ be the $2 \times 2$ zero matrix.
+
+- **Multiplication by $I$:**
 
 $$
-A = \begin{pmatrix}
-2 & 1 \\
-0 & 2
-\end{pmatrix}
-$$
-
-### 1. Identity and Zero Matrices
-
-The identity and zero matrices are:
-
-$$
-I = \begin{pmatrix}1&0\\0&1\end{pmatrix},
-\qquad
-0 = \begin{pmatrix}0&0\\0&0\end{pmatrix}
-$$
-
-Multiplying by the identity matrix:
-
-$$
-AI = IA =
-\begin{pmatrix}2&1\\0&2\end{pmatrix}
-$$
-
-Adding the zero matrix:
-
-$$
-A+0 =
-\begin{pmatrix}2&1\\0&2\end{pmatrix}
-$$
-
-### 2. Calculate A²
-
-$$
-A^2 = A \cdot A
+AI = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix} \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 2(1)+1(0) & 2(0)+1(1) \\ 0(1)+2(0) & 0(0)+2(1) \end{pmatrix} = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix}
 $$
 
 $$
-A^2 =
-\begin{pmatrix}
-2(2)+1(0) & 2(1)+1(2) \\
-0(2)+2(0) & 0(1)+2(2)
-\end{pmatrix}
+IA = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix} = \begin{pmatrix} 1(2)+0(0) & 1(1)+0(2) \\ 0(2)+1(0) & 0(1)+1(2) \end{pmatrix} = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix}
 $$
 
-$$
-A^2 = \begin{pmatrix}4&4\\0&4\end{pmatrix}
-$$
-
-### 3. Calculate A³
+- **Addition of $0$:**
 
 $$
-A^3 = A^2 \cdot A
+A + 0 = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix} + \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix} = \begin{pmatrix} 2+0 & 1+0 \\ 0+0 & 2+0 \end{pmatrix} = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix}
 $$
 
-$$
-A^3 =
-\begin{pmatrix}
-4(2)+4(0) & 4(1)+4(2) \\
-0(2)+4(0) & 0(1)+4(2)
-\end{pmatrix}
-$$
+### 2. Calculation of Powers $A^2$ and $A^3$
+
+- **Calculation of $A^2$:**
 
 $$
-A^3 = \begin{pmatrix}8&12\\0&8\end{pmatrix}
+A^2 = A \cdot A = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix} \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix} = \begin{pmatrix} 2(2)+1(0) & 2(1)+1(2) \\ 0(2)+2(0) & 0(1)+2(2) \end{pmatrix} = \begin{pmatrix} 4 & 4 \\ 0 & 4 \end{pmatrix}
 $$
 
-## Explanation
-
-The identity matrix does not change a matrix when multiplied by it.
-
-The zero matrix does not change a matrix when added to it.
-
-The powers of A follow a pattern:
+- **Calculation of $A^3$:**
 
 $$
-A^n =
-\begin{pmatrix}
-2^n & n2^{n-1} \\
-0 & 2^n
-\end{pmatrix}
+A^3 = A^2 \cdot A = \begin{pmatrix} 4 & 4 \\ 0 & 4 \end{pmatrix} \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix} = \begin{pmatrix} 4(2)+4(0) & 4(1)+4(2) \\ 0(2)+4(0) & 0(1)+4(2) \end{pmatrix} = \begin{pmatrix} 8 & 12 \\ 0 & 8 \end{pmatrix}
 $$
 
-The diagonal entries are powers of 2, while the upper-right entry follows the pattern $n2^{n-1}$.
+### 3. Explanation of Neutral Elements and Observed Pattern
 
-## Verification
+- **Roles of $I$ and $0$:**
+  - The identity matrix $I$ serves as the multiplicative neutral element ($AI = IA = A$).
+  - The zero matrix $0$ serves as the additive neutral element ($A + 0 = A$).
 
-For n = 2:
+- **Pattern in Powers $A^n$:**
+  Observing the calculated powers:
+  - $A^1 = \begin{pmatrix} 2^1 & 1 \cdot 2^0 \\ 0 & 2^1 \end{pmatrix} = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix}$
+  - $A^2 = \begin{pmatrix} 2^2 & 2 \cdot 2^1 \\ 0 & 2^2 \end{pmatrix} = \begin{pmatrix} 4 & 4 \\ 0 & 4 \end{pmatrix}$
+  - $A^3 = \begin{pmatrix} 2^3 & 3 \cdot 2^2 \\ 0 & 2^3 \end{pmatrix} = \begin{pmatrix} 8 & 12 \\ 0 & 8 \end{pmatrix}$
 
-$$
-A^2 = \begin{pmatrix}4&4\\0&4\end{pmatrix}
-$$
-
-For n = 3:
-
-$$
-A^3 = \begin{pmatrix}8&12\\0&8\end{pmatrix}
-$$
-
-Both results match the formula.
-
-## Final Answer
+  The general pattern for any positive integer $n$ is:
 
 $$
-\boxed{AI=IA=A+0=A}
+A^n = \begin{pmatrix} 2^n & n \cdot 2^{n-1} \\ 0 & 2^n \end{pmatrix}
 $$
 
-$$
-\boxed{A^2=\begin{pmatrix}4&4\\0&4\end{pmatrix}}
-$$
+### Verification
 
-$$
-\boxed{A^3=\begin{pmatrix}8&12\\0&8\end{pmatrix}}
-$$
+We test the general formula $A^n = \begin{pmatrix} 2^n & n \cdot 2^{n-1} \\ 0 & 2^n \end{pmatrix}$ against our calculated values:
+
+- For $n = 2$: $\begin{pmatrix} 2^2 & 2 \cdot 2^{2-1} \\ 0 & 2^2 \end{pmatrix} = \begin{pmatrix} 4 & 4 \\ 0 & 4 \end{pmatrix} = A^2$.
+- For $n = 3$: $\begin{pmatrix} 2^3 & 3 \cdot 2^{3-1} \\ 0 & 2^3 \end{pmatrix} = \begin{pmatrix} 8 & 12 \\ 0 & 8 \end{pmatrix} = A^3$.
+
+Both match the matrix multiplication results, verifying the pattern.
