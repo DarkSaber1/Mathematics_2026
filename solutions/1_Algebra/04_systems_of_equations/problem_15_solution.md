@@ -57,7 +57,7 @@ $$
 
 - **Pivots:** There are 2 non-zero pivots (column 1 for $x$, column 2 for $y$).
 - **Classification:** **Exactly one solution (Unique Solution)**.
-- **Justification:** The rank of the matrix equals the number of variables ($r = n = 2$). Back-substitution yields $y = 1$ and $x = 1$, giving the unique solution vector:
+- **Justification:** The rank of the matrix equals the number of variables ($r = n = 2$). Back-substitution yields $y = 1$ and $x = 1$. The unique solution vector is:
 
 $$
 \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 1 \\ 1 \end{pmatrix}
@@ -87,7 +87,7 @@ $$
 
 - **Pivots:** There is only 1 pivot (column 1 for $x$). Column 2 ($y$) contains no pivot.
 - **Classification:** **Infinitely many solutions**.
-- **Justification:** The second row yields $0 = 0$, making it completely redundant. Variable $y$ is a free variable ($y = t$). The system reduces to $x = 2 - t$, giving the parametric solution set:
+- **Justification:** The second row yields $0 = 0$, making it completely redundant. Variable $y$ is a free variable ($y = t$). The system reduces to $x = 2 - t$. The parametric solution set is:
 
 $$
 \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 2 \\ 0 \end{pmatrix} + t \begin{pmatrix} -1 \\ 1 \end{pmatrix} \qquad (t \in \mathbb{R})
@@ -117,14 +117,26 @@ $$
 
 - **Pivots:** A pivot appears in the augmented right-hand side column.
 - **Classification:** **No solution (Inconsistent System)**.
-- **Justification:** Row 2 translates to $0x + 0y = 1 \implies 0 = 1$, which is a logical contradiction.
+- **Justification:** Row 2 translates to the linear equation:
+
+$$
+0x + 0y = 1
+$$
+
+Simplifying gives:
+
+$$
+0 = 1
+$$
+
+This is a logical contradiction.
 
 ---
 
 ### 4. Summary Table of Classifications
 
-| System | Row Echelon Structure | Pivot Positions | Solution Type |
+| System | Row Echelon Form (Rows) | Pivot Positions | Solution Type |
 | :--- | :--- | :--- | :--- |
-| **System 1** | $\left(\begin{array}{cc\|c} 1 & 1 & 2 \\ 0 & -2 & -2 \end{array}\right)$ | Columns 1 and 2 | **Exactly one solution** |
-| **System 2** | $\left(\begin{array}{cc\|c} 1 & 1 & 2 \\ 0 & 0 & 0 \end{array}\right)$ | Column 1 (1 free variable) | **Infinitely many solutions** |
-| **System 3** | $\left(\begin{array}{cc\|c} 1 & 1 & 2 \\ 0 & 0 & 1 \end{array}\right)$ | Column 1 and Augmented column | **No solution** |
+| **System 1** | Row 1: [1, 1 \| 2]<br>Row 2: [0, -2 \| -2] | Columns 1 and 2 | **Exactly one solution** |
+| **System 2** | Row 1: [1, 1 \| 2]<br>Row 2: [0, 0 \| 0] | Column 1 (1 free variable) | **Infinitely many solutions** |
+| **System 3** | Row 1: [1, 1 \| 2]<br>Row 2: [0, 0 \| 1] | Column 1 and Augmented column | **No solution** |
