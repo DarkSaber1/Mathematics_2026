@@ -114,4 +114,8 @@ $$
 1 + 2(2) - 3 = 1 + 4 - 3 = 2 \quad (\text{Correct})
 $$
 
-All three equations are satisfied, confirming that the solution vector $x = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$ is correct.
+All three equations are satisfied, confirming the solution vector:
+
+$$
+x = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}
+$$
