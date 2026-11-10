@@ -8,11 +8,11 @@ $$
 A=
 \begin{pmatrix}
 1 & 2 \\
-0 & 1 \\
+0 & 1
 \end{pmatrix},\qquad B=
 \begin{pmatrix}
 2 & 0 \\
-3 & 1 \\
+3 & 1
 \end{pmatrix}
 $$
 
@@ -25,25 +25,15 @@ compute $AB$ and $BA$. Is $AB=BA$? Use this example to explain what noncommutati
 We compute $AB$ by taking the dot product of rows of $A$ with columns of $B$:
 
 $$
-AB =
-\begin{pmatrix}
-1 & 2 \\
-0 & 1
-\end{pmatrix}
-\begin{pmatrix}
-2 & 0 \\
-3 & 1
-\end{pmatrix}
-=
-\begin{pmatrix}
-1(2)+2(3) & 1(0)+2(1) \\
-0(2)+1(3) & 0(0)+1(1)
-\end{pmatrix}
-=
-\begin{pmatrix}
-8 & 2 \\
-3 & 1
-\end{pmatrix}
+AB = \begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 2 & 0 \\ 3 & 1 \end{pmatrix}
+$$
+
+$$
+AB = \begin{pmatrix} 1(2)+2(3) & 1(0)+2(1) \\ 0(2)+1(3) & 0(0)+1(1) \end{pmatrix}
+$$
+
+$$
+AB = \begin{pmatrix} 8 & 2 \\ 3 & 1 \end{pmatrix}
 $$
 
 ### 2. Calculation of $BA$
@@ -51,25 +41,15 @@ $$
 We compute $BA$ by taking the dot product of rows of $B$ with columns of $A$:
 
 $$
-BA =
-\begin{pmatrix}
-2 & 0 \\
-3 & 1
-\end{pmatrix}
-\begin{pmatrix}
-1 & 2 \\
-0 & 1
-\end{pmatrix}
-=
-\begin{pmatrix}
-2(1)+0(0) & 2(2)+0(1) \\
-3(1)+1(0) & 3(2)+1(1)
-\end{pmatrix}
-=
-\begin{pmatrix}
-2 & 4 \\
-3 & 7
-\end{pmatrix}
+BA = \begin{pmatrix} 2 & 0 \\ 3 & 1 \end{pmatrix} \begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix}
+$$
+
+$$
+BA = \begin{pmatrix} 2(1)+0(0) & 2(2)+0(1) \\ 3(1)+1(0) & 3(2)+1(1) \end{pmatrix}
+$$
+
+$$
+BA = \begin{pmatrix} 2 & 4 \\ 3 & 7 \end{pmatrix}
 $$
 
 ### 3. Comparison and Explanation of Noncommutativity
@@ -87,6 +67,7 @@ In real-number arithmetic, multiplication is commutative ($a \cdot b = b \cdot a
 ### Verification
 
 We verify the entry calculations element-by-element:
+
 - For $AB$:
   - Entry $(1,1): 1 \cdot 2 + 2 \cdot 3 = 8$
   - Entry $(1,2): 1 \cdot 0 + 2 \cdot 1 = 2$
