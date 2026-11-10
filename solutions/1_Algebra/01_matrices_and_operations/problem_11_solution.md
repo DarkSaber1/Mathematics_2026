@@ -1,192 +1,80 @@
-
 # Exercise 11 – When Do Matrices Commute?
 
 ## Problem Statement
 
-Find the conditions on a, b, c, and d under which AB = BA. Determine the general form of matrix B.
+Given
+
+$$
+A=
+\begin{pmatrix}
+1 & 1 \\
+0 & 1 \\
+\end{pmatrix},\qquad B=
+\begin{pmatrix}
+a & b \\
+c & d \\
+\end{pmatrix}
+$$
+
+Find the conditions on $a,b,c,d$ under which $AB=BA$. Describe the general form of all such matrices $B$.
 
 ## Solution
 
-Given:
+### 1. Calculation of Matrix Products $AB$ and $BA$
+
+- **Product $AB$:**
 
 $$
-A =
-\begin{pmatrix}
-1 & 1 \\
-0 & 1
-\end{pmatrix}
+AB = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} a & b \\ c & d \end{pmatrix} = \begin{pmatrix} 1(a)+1(c) & 1(b)+1(d) \\ 0(a)+1(c) & 0(b)+1(d) \end{pmatrix} = \begin{pmatrix} a+c & b+d \\ c & d \end{pmatrix}
 $$
 
-$$
-B =
-\begin{pmatrix}
-a & b \\
-c & d
-\end{pmatrix}
-$$
-
-### 1. Calculate AB
+- **Product $BA$:**
 
 $$
-AB =
-\begin{pmatrix}
-1 & 1 \\
-0 & 1
-\end{pmatrix}
-\begin{pmatrix}
-a & b \\
-c & d
-\end{pmatrix}
+BA = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} a(1)+b(0) & a(1)+b(1) \\ c(1)+d(0) & c(1)+d(1) \end{pmatrix} = \begin{pmatrix} a & a+b \\ c & c+d \end{pmatrix}
 $$
 
-$$
-AB =
-\begin{pmatrix}
-a+c & b+d \\
-c & d
-\end{pmatrix}
-$$
+### 2. Deriving Conditions for Commutativity ($AB = BA$)
 
-### 2. Calculate BA
+For $AB = BA$ to hold, their corresponding entries must be equal element-by-element:
 
-$$
-BA =
-\begin{pmatrix}
-a & b \\
-c & d
-\end{pmatrix}
-\begin{pmatrix}
-1 & 1 \\
-0 & 1
-\end{pmatrix}
-$$
+1. **Top-left entry $(1,1)$:** $a + c = a \implies c = 0$
+2. **Top-right entry $(1,2)$:** $b + d = a + b \implies d = a$
+3. **Bottom-left entry $(2,1)$:** $c = c$ (holds automatically)
+4. **Bottom-right entry $(2,2)$:** $d = c + d \implies c = 0$
+
+Thus, the required necessary and sufficient conditions for commutativity are:
 
 $$
-BA =
-\begin{pmatrix}
-a & a+b \\
-c & c+d
-\end{pmatrix}
+c = 0 \quad \text{and} \quad d = a
 $$
 
-### 3. Find the Conditions
+### 3. General Form of Matrix $B$
 
-For AB = BA, corresponding entries must be equal.
-
-From the first entry:
+Substituting $c = 0$ and $d = a$ into matrix $B$ yields the general form for all commuting matrices:
 
 $$
-a+c=a
+B = \begin{pmatrix} a & b \\ 0 & a \end{pmatrix} \quad \text{where } a, b \in \mathbb{R}
 $$
 
-$$
-c=0
-$$
+### Explanation
 
-From the second entry:
+Although matrix multiplication is generally noncommutative, specific matrices can commute if their algebraic structure aligns. In this case, any matrix $B$ that commutes with $A = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}$ must be an upper triangular matrix with equal diagonal elements.
 
-$$
-b+d=a+b
-$$
+### Verification
 
-$$
-d=a
-$$
+We multiply $A$ by the generalized commuting matrix $B = \begin{pmatrix} a & b \\ 0 & a \end{pmatrix}$ in both orders:
 
-The remaining entries give the same conditions.
-
-Therefore:
+- **$AB$:**
 
 $$
-\boxed{c=0,\quad d=a}
+AB = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} a & b \\ 0 & a \end{pmatrix} = \begin{pmatrix} a & a+b \\ 0 & a \end{pmatrix}
 $$
 
-### 4. General Form of B
-
-Substituting these conditions:
+- **$BA$:**
 
 $$
-B =
-\begin{pmatrix}
-a & b \\
-0 & a
-\end{pmatrix}
+BA = \begin{pmatrix} a & b \\ 0 & a \end{pmatrix} \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} a & a+b \\ 0 & a \end{pmatrix}
 $$
 
-where a and b can be any real numbers.
-
-## Explanation
-
-Two matrices commute when their multiplication order does not affect the result.
-
-To find when AB = BA, we calculate both products and compare their corresponding entries.
-
-The matrices commute only when c = 0 and d = a.
-
-## Verification
-
-Using the general form of B:
-
-$$
-AB =
-\begin{pmatrix}
-1 & 1 \\
-0 & 1
-\end{pmatrix}
-\begin{pmatrix}
-a & b \\
-0 & a
-\end{pmatrix}
-$$
-
-$$
-AB =
-\begin{pmatrix}
-a & a+b \\
-0 & a
-\end{pmatrix}
-$$
-
-Now calculate BA:
-
-$$
-BA =
-\begin{pmatrix}
-a & b \\
-0 & a
-\end{pmatrix}
-\begin{pmatrix}
-1 & 1 \\
-0 & 1
-\end{pmatrix}
-$$
-
-$$
-BA =
-\begin{pmatrix}
-a & a+b \\
-0 & a
-\end{pmatrix}
-$$
-
-Both results are equal, so the conditions are verified.
-
-## Final Answer
-
-$$
-\boxed{c=0,\quad d=a}
-$$
-
-The general form of B is:
-
-$$
-\boxed{
-B =
-\begin{pmatrix}
-a & b \\
-0 & a
-\end{pmatrix}
-}
-$$
-
-where $a,b \in \mathbb{R}$.
+Since $AB = BA = \begin{pmatrix} a & a+b \\ 0 & a \end{pmatrix}$, the conditions and general form are fully verified.
