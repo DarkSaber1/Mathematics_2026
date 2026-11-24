@@ -1,139 +1,75 @@
-# Exercise 14 – Block Diagonal Matrix Inverse
+# Exercise 14 – A Matrix That Is Its Own Inverse
 
 ## Problem Statement
 
-Consider the block matrix
+Assume that a square matrix $A$ satisfies
 
 $$
-M=
-\begin{pmatrix}
-A & 0 \\
-0 & B
-\end{pmatrix}
+A^2=I.
 $$
 
-where $A$ and $B$ are invertible square matrices (not necessarily of the same size) and $0$ denotes zero blocks of appropriate sizes.
-
-1. Show that $M$ is invertible and that its inverse is given by
+Show that
 
 $$
-M^{-1}=
-\begin{pmatrix}
-A^{-1} & 0 \\
-0 & B^{-1}
-\end{pmatrix}
+A^{-1}=A.
 $$
 
-2. Apply this result to find the inverse of
-
-$$
-M=
-\begin{pmatrix}
-1 & 2 & 0 & 0 \\
-3 & 4 & 0 & 0 \\
-0 & 0 & 5 & 6 \\
-0 & 0 & 7 & 8
-\end{pmatrix}
-$$
+Then give an example of a $2\times2$ matrix different from $I$ and $-I$ that satisfies this condition, and verify it by multiplication.
 
 ## Solution
 
-### 1. Proof of the Block Diagonal Inverse Formula
+### 1. Proof That $A^{-1} = A$
 
-To show that $M^{-1} = \begin{pmatrix} A^{-1} & 0 \\ 0 & B^{-1} \end{pmatrix}$, we compute the block matrix product $M M^{-1}$ using standard block multiplication rules:
-
-$$
-M M^{-1} = \begin{pmatrix} A & 0 \\ 0 & B \end{pmatrix} \begin{pmatrix} A^{-1} & 0 \\ 0 & B^{-1} \end{pmatrix}
-$$
-
-Multiplying block-by-block:
+By definition, a square matrix $B$ is the inverse of a square matrix $A$ (denoted $B = A^{-1}$) if and only if multiplying them in both orders yields the identity matrix $I$:
 
 $$
-M M^{-1} = \begin{pmatrix} A A^{-1} + 0 \cdot 0 & A \cdot 0 + 0 \cdot B^{-1} \\ 0 \cdot A^{-1} + B \cdot 0 & 0 \cdot 0 + B B^{-1} \end{pmatrix}
+AB = I \qquad \text{and} \qquad BA = I
 $$
 
-$$
-M M^{-1} = \begin{pmatrix} A A^{-1} & 0 \\ 0 & B B^{-1} \end{pmatrix}
-$$
-
-Since $A$ and $B$ are invertible matrices, $A A^{-1} = I_k$ and $B B^{-1} = I_m$ (where $k$ and $m$ are the dimensions of $A$ and $B$ respectively):
+We are given the condition that $A^2 = I$. Expanding $A^2$ as the product of $A$ with itself gives:
 
 $$
-M M^{-1} = \begin{pmatrix} I_k & 0 \\ 0 & I_m \end{pmatrix} = I_{k+m}
+A \cdot A = I
 $$
 
-Similarly, checking $M^{-1} M$:
+Comparing this equation directly with the definition of the inverse shows that $A$ itself satisfies the role of $B$ on both the left and the right. Therefore, $A$ is invertible and its inverse is equal to $A$:
 
 $$
-M^{-1} M = \begin{pmatrix} A^{-1} & 0 \\ 0 & B^{-1} \end{pmatrix} \begin{pmatrix} A & 0 \\ 0 & B \end{pmatrix} = \begin{pmatrix} A^{-1}A & 0 \\ 0 & B^{-1}B \end{pmatrix} = \begin{pmatrix} I_k & 0 \\ 0 & I_m \end{pmatrix} = I_{k+m}
-$$
-
-This proves that $M^{-1} = \begin{pmatrix} A^{-1} & 0 \\ 0 & B^{-1} \end{pmatrix}$.
-
----
-
-### 2. Computing the Inverse of the Given $4 \times 4$ Matrix
-
-The matrix $M$ can be partitioned into $2 \times 2$ diagonal blocks:
-
-$$
-M = \begin{pmatrix} A & 0 \\ 0 & B \end{pmatrix}
-$$
-
-where
-
-$$
-A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix},\qquad B = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix}
-$$
-
-- **Inverting Block $A$:**
-
-$$
-\det(A) = (1)(4) - (2)(3) = 4 - 6 = -2
-$$
-
-$$
-A^{-1} = \frac{1}{-2} \begin{pmatrix} 4 & -2 \\ -3 & 1 \end{pmatrix} = \begin{pmatrix} -2 & 1 \\ \frac{3}{2} & -\frac{1}{2} \end{pmatrix}
-$$
-
-- **Inverting Block $B$:**
-
-$$
-\det(B) = (5)(8) - (6)(7) = 40 - 42 = -2
-$$
-
-$$
-B^{-1} = \frac{1}{-2} \begin{pmatrix} 8 & -6 \\ -7 & 5 \end{pmatrix} = \begin{pmatrix} -4 & 3 \\ \frac{7}{2} & -\frac{5}{2} \end{pmatrix}
-$$
-
-Combining $A^{-1}$ and $B^{-1}$ into $M^{-1}$:
-
-$$
-M^{-1} = \begin{pmatrix} -2 & 1 & 0 & 0 \\ \frac{3}{2} & -\frac{1}{2} & 0 & 0 \\ 0 & 0 & -4 & 3 \\ 0 & 0 & \frac{7}{2} & -\frac{5}{2} \end{pmatrix}
+A^{-1} = A
 $$
 
 ---
 
-### Verification
+### 2. Example of a $2 \times 2$ Matrix ($A \neq \pm I$)
 
-We multiply $M M^{-1}$ to confirm the result:
-
-- **Top-left $2 \times 2$ block:**
+Consider the $2 \times 2$ reflection matrix across the line $y = x$:
 
 $$
-\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \begin{pmatrix} -2 & 1 \\ \frac{3}{2} & -\frac{1}{2} \end{pmatrix} = \begin{pmatrix} -2 + 3 & 1 - 1 \\ -6 + 6 & 3 - 2 \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
+A = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
 $$
 
-- **Bottom-right $2 \times 2$ block:**
+This matrix is clearly distinct from both the identity matrix $I_2$ and its negative $-I_2$:
 
 $$
-\begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix} \begin{pmatrix} -4 & 3 \\ \frac{7}{2} & -\frac{5}{2} \end{pmatrix} = \begin{pmatrix} -20 + 21 & 15 - 15 \\ -28 + 28 & 21 - 20 \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
+I_2 = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}, \qquad -I_2 = \begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix}
 $$
 
-- **Off-diagonal $2 \times 2$ blocks:** Yield zero matrices of size $2 \times 2$.
+---
+
+### 3. Verification by Matrix Multiplication
+
+We verify that $A$ satisfies $A^2 = I_2$ by computing the product $A \cdot A$:
 
 $$
-M M^{-1} = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix} = I_4
+A^2 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
 $$
 
-Since $M M^{-1} = I_4$, the block matrix inverse is verified.
+$$
+A^2 = \begin{pmatrix} 0(0) + 1(1) & 0(1) + 1(0) \\ 1(0) + 0(1) & 1(1) + 0(0) \end{pmatrix}
+$$
+
+$$
+A^2 = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = I_2
+$$
+
+Since $A^2 = I_2$, the condition holds, confirming that $A^{-1} = A$.

@@ -1,82 +1,95 @@
-# Exercise 12 – Parametric Inverse Matrix
+# Exercise 12 – Finding Inverses Without Starting from Scratch
 
 ## Problem Statement
 
-Consider the matrix containing a parameter $k$:
+It is known that
 
 $$
-A(k) =
+A^{-1}=
 \begin{pmatrix}
-1 & k \\
-k & 4
-\end{pmatrix}
+2 & -1 \\
+-3 & 2 \\
+\end{pmatrix}.
 $$
 
-1. Determine for which values of $k$ the matrix $A(k)$ is singular (not invertible).
-2. For all values of $k$ where $A(k)$ is invertible, compute $A^{-1}(k)$.
-3. Verify the result by matrix multiplication.
+Without finding $A$, compute $(3A)^{-1}$, $(A^T)^{-1}$, and $(A^2)^{-1}$. Justify each result using the appropriate property.
 
 ## Solution
 
-### 1. Determining Singularity (Values of $k$)
+### 1. Computing $(3A)^{-1}$
 
-A square matrix is singular if and only if its determinant is zero ($\det(A) = 0$).
-
-$$
-\det(A(k)) = (1)(4) - (k)(k) = 4 - k^2
-$$
-
-Setting the determinant to zero:
+- **Property Used:**  
+  For any invertible matrix $A$ and non-zero scalar $c \neq 0$, the inverse of a scalar multiple is given by:
 
 $$
-4 - k^2 = 0 \implies k^2 = 4 \implies k = \pm 2
+(cA)^{-1} = \frac{1}{c} A^{-1}
 $$
 
-- For $k = 2$ or $k = -2$, $\det(A(k)) = 0$, so **$A(k)$ is singular (not invertible)**.
-- For $k \neq \pm 2$, $\det(A(k)) \neq 0$, so **$A(k)$ is invertible**.
-
----
-
-### 2. Computing the Parametric Inverse Matrix $A^{-1}(k)$
-
-For $k \neq \pm 2$, we apply the $2 \times 2$ matrix inverse formula:
+  **Justification:** Multiplying $(cA)$ by $\left(\frac{1}{c} A^{-1}\right)$ yields:
 
 $$
-A^{-1} = \frac{1}{\det(A)} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}
+(cA)\left(\frac{1}{c}A^{-1}\right) = \left(c \cdot \frac{1}{c}\right)(AA^{-1}) = 1 \cdot I = I
 $$
 
-Substituting $a=1$, $b=k$, $c=k$, $d=4$, and $\det(A(k)) = 4 - k^2$:
+- **Calculation:**  
+  Substituting $c = 3$ and the given $A^{-1}$:
 
 $$
-A^{-1}(k) = \frac{1}{4 - k^2} \begin{pmatrix} 4 & -k \\ -k & 1 \end{pmatrix}
+(3A)^{-1} = \frac{1}{3} A^{-1} = \frac{1}{3} \begin{pmatrix} 2 & -1 \\ -3 & 2 \end{pmatrix} = \begin{pmatrix} \frac{2}{3} & -\frac{1}{3} \\ -1 & \frac{2}{3} \end{pmatrix}
 $$
 
 ---
 
-### 3. Verification by Matrix Multiplication
+### 2. Computing $(A^T)^{-1}$
 
-We verify that $A(k) A^{-1}(k) = I$ for $k \neq \pm 2$:
-
-$$
-A(k) A^{-1}(k) = \begin{pmatrix} 1 & k \\ k & 4 \end{pmatrix} \left[ \frac{1}{4 - k^2} \begin{pmatrix} 4 & -k \\ -k & 1 \end{pmatrix} \right]
-$$
-
-Factoring out the scalar $\frac{1}{4 - k^2}$:
+- **Property Used:**  
+  For any invertible matrix $A$, the inverse of its transpose is equal to the transpose of its inverse:
 
 $$
-A(k) A^{-1}(k) = \frac{1}{4 - k^2} \begin{pmatrix} 1(4) + k(-k) & 1(-k) + k(1) \\ k(4) + 4(-k) & k(-k) + 4(1) \end{pmatrix}
+(A^T)^{-1} = (A^{-1})^T
+$$
+
+  **Justification:** Taking the transpose of both sides of $A A^{-1} = I$ gives:
+
+$$
+(A A^{-1})^T = I^T \implies (A^{-1})^T A^T = I
+$$
+
+- **Calculation:**  
+  Transposing $A^{-1}$ (swapping its rows and columns):
+
+$$
+(A^T)^{-1} = (A^{-1})^T = \begin{pmatrix} 2 & -3 \\ -1 & 2 \end{pmatrix}
+$$
+
+---
+
+### 3. Computing $(A^2)^{-1}$
+
+- **Property Used:**  
+  For any invertible matrix $A$ and positive integer $k$, the inverse of a matrix power equals the power of its inverse:
+
+$$
+(A^k)^{-1} = (A^{-1})^k
+$$
+
+  **Justification:** For $k = 2$, $A^2 = A \cdot A$. Using the inverse-of-a-product rule $(AB)^{-1} = B^{-1}A^{-1}$ with $B = A$:
+
+$$
+(A^2)^{-1} = (A \cdot A)^{-1} = A^{-1} A^{-1} = (A^{-1})^2
+$$
+
+- **Calculation:**  
+  Multiplying $A^{-1}$ by itself:
+
+$$
+(A^2)^{-1} = (A^{-1})^2 = \begin{pmatrix} 2 & -1 \\ -3 & 2 \end{pmatrix} \begin{pmatrix} 2 & -1 \\ -3 & 2 \end{pmatrix}
 $$
 
 $$
-A(k) A^{-1}(k) = \frac{1}{4 - k^2} \begin{pmatrix} 4 - k^2 & -k + k \\ 4k - 4k & 4 - k^2 \end{pmatrix}
+(A^2)^{-1} = \begin{pmatrix} 2(2) + (-1)(-3) & 2(-1) + (-1)(2) \\ (-3)(2) + 2(-3) & (-3)(-1) + 2(2) \end{pmatrix}
 $$
 
 $$
-A(k) A^{-1}(k) = \frac{1}{4 - k^2} \begin{pmatrix} 4 - k^2 & 0 \\ 0 & 4 - k^2 \end{pmatrix}
+(A^2)^{-1} = \begin{pmatrix} 4 + 3 & -2 - 2 \\ -6 - 6 & 3 + 4 \end{pmatrix} = \begin{pmatrix} 7 & -4 \\ -12 & 7 \end{pmatrix}
 $$
-
-$$
-A(k) A^{-1}(k) = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = I_2
-$$
-
-Since $A(k) A^{-1}(k) = I_2$, the inverse matrix formula is verified.

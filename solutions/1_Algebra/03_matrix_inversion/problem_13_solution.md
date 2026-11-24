@@ -1,109 +1,116 @@
-# Exercise 13 – Inverse of a 3×3 Upper Triangular Matrix
+# Exercise 13 – Undoing a Composite Transformation
 
 ## Problem Statement
 
-Find the inverse of the upper triangular matrix
+The matrices
 
 $$
-U=
+S=
 \begin{pmatrix}
-2 & 1 & -1 \\
-0 & 3 & 2 \\
-0 & 0 & 4
+2 & 0 \\
+0 & 1 \\
+\end{pmatrix},\qquad H=
+\begin{pmatrix}
+1 & 1 \\
+0 & 1 \\
 \end{pmatrix}
 $$
 
-using Gauss–Jordan elimination. Check your answer by computing $U U^{-1}$.
+describe nonuniform scaling and shear. For $T=HS$, find $T^{-1}$ in two ways:
+
+1. first compute $T$, then its inverse,
+2. use $(HS)^{-1}=S^{-1}H^{-1}$.
+
+Compare the results. Additionally compute $H^{-1}S^{-1}$ and verify that the incorrect order gives a different matrix. Explain the rule: “when undoing a composition of operations, we undo them from the end.”
 
 ## Solution
 
-### 1. Step-by-Step Gauss–Jordan Elimination
+### 1. Method 1: Compute $T = HS$ First, Then Its Inverse
 
-We form the augmented matrix $[U \mid I_3]$:
-
-$$
-[U \mid I_3] = \left(\begin{array}{ccc|ccc} 2 & 1 & -1 & 1 & 0 & 0 \\ 0 & 3 & 2 & 0 & 1 & 0 \\ 0 & 0 & 4 & 0 & 0 & 1 \end{array}\right)
-$$
-
-- **Step 1:** Scale row 3 to make its pivot equal to $1$ ($R_3 \leftarrow \frac{1}{4} R_3$):
+First, we compute the product matrix $T = HS$:
 
 $$
-\left(\begin{array}{ccc|ccc} 2 & 1 & -1 & 1 & 0 & 0 \\ 0 & 3 & 2 & 0 & 1 & 0 \\ 0 & 0 & 1 & 0 & 0 & \frac{1}{4} \end{array}\right)
+T = HS = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 1(2) + 1(0) & 1(0) + 1(1) \\ 0(2) + 1(0) & 0(0) + 1(1) \end{pmatrix} = \begin{pmatrix} 2 & 1 \\ 0 & 1 \end{pmatrix}
 $$
 
-- **Step 2:** Eliminate the entry in column 3 of row 2 by performing $R_2 \leftarrow R_2 - 2 R_3$:
+Next, we find $T^{-1}$ using the $2 \times 2$ inverse formula. The determinant of $T$ is:
 
 $$
-R_2 \text{ calculation: } (0, 3, 2, 0, 1, 0) - 2\left(0, 0, 1, 0, 0, \frac{1}{4}\right) = \left(0, 3, 0, 0, 1, -\frac{1}{2}\right)
+\det(T) = (2)(1) - (1)(0) = 2
 $$
 
-$$
-\left(\begin{array}{ccc|ccc} 2 & 1 & -1 & 1 & 0 & 0 \\ 0 & 3 & 0 & 0 & 1 & -\frac{1}{2} \\ 0 & 0 & 1 & 0 & 0 & \frac{1}{4} \end{array}\right)
-$$
-
-- **Step 3:** Eliminate the entry in column 3 of row 1 by performing $R_1 \leftarrow R_1 + R_3$:
+Applying the $2 \times 2$ inverse formula:
 
 $$
-R_1 \text{ calculation: } (1, 0, 0, 1, 0, 0 \text{ with respect to pivot}) \implies (2, 1, -1, 1, 0, 0) + \left(0, 0, 1, 0, 0, \frac{1}{4}\right) = \left(2, 1, 0, 1, 0, \frac{1}{4}\right)
+T^{-1} = \frac{1}{2} \begin{pmatrix} 1 & -1 \\ 0 & 2 \end{pmatrix} = \begin{pmatrix} \frac{1}{2} & -\frac{1}{2} \\ 0 & 1 \end{pmatrix}
 $$
 
-$$
-\left(\begin{array}{ccc|ccc} 2 & 1 & 0 & 1 & 0 & \frac{1}{4} \\ 0 & 3 & 0 & 0 & 1 & -\frac{1}{2} \\ 0 & 0 & 1 & 0 & 0 & \frac{1}{4} \end{array}\right)
-$$
+---
 
-- **Step 4:** Scale row 2 to make its pivot equal to $1$ ($R_2 \leftarrow \frac{1}{3} R_2$):
+### 2. Method 2: Using $(HS)^{-1} = S^{-1}H^{-1}$
 
-$$
-\left(\begin{array}{ccc|ccc} 2 & 1 & 0 & 1 & 0 & \frac{1}{4} \\ 0 & 1 & 0 & 0 & \frac{1}{3} & -\frac{1}{6} \\ 0 & 0 & 1 & 0 & 0 & \frac{1}{4} \end{array}\right)
-$$
+First, we compute the individual inverses $S^{-1}$ and $H^{-1}$:
 
-- **Step 5:** Eliminate the entry in column 2 of row 1 by performing $R_1 \leftarrow R_1 - R_2$:
+- **For $S$:** $\det(S) = (2)(1) - (0)(0) = 2$, so:
 
 $$
-R_1 \text{ calculation: } \left(2, 1, 0, 1, 0, \frac{1}{4}\right) - \left(0, 1, 0, 0, \frac{1}{3}, -\frac{1}{6}\right) = \left(2, 0, 0, 1, -\frac{1}{3}, \frac{1}{4} + \frac{1}{6}\right) = \left(2, 0, 0, 1, -\frac{1}{3}, \frac{5}{12}\right)
+S^{-1} = \frac{1}{2} \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix} = \begin{pmatrix} \frac{1}{2} & 0 \\ 0 & 1 \end{pmatrix}
 $$
 
-$$
-\left(\begin{array}{ccc|ccc} 2 & 0 & 0 & 1 & -\frac{1}{3} & \frac{5}{12} \\ 0 & 1 & 0 & 0 & \frac{1}{3} & -\frac{1}{6} \\ 0 & 0 & 1 & 0 & 0 & \frac{1}{4} \end{array}\right)
-$$
-
-- **Step 6:** Scale row 1 by $\frac{1}{2}$ ($R_1 \leftarrow \frac{1}{2} R_1$):
+- **For $H$:** $\det(H) = (1)(1) - (1)(0) = 1$, so:
 
 $$
-\left(\begin{array}{ccc|ccc} 1 & 0 & 0 & \frac{1}{2} & -\frac{1}{6} & \frac{5}{24} \\ 0 & 1 & 0 & 0 & \frac{1}{3} & -\frac{1}{6} \\ 0 & 0 & 1 & 0 & 0 & \frac{1}{4} \end{array}\right)
+H^{-1} = \frac{1}{1} \begin{pmatrix} 1 & -1 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 1 & -1 \\ 0 & 1 \end{pmatrix}
 $$
 
-Thus, the inverse matrix is:
+Now, we multiply $S^{-1}$ by $H^{-1}$:
 
 $$
-U^{-1} = \begin{pmatrix} \frac{1}{2} & -\frac{1}{6} & \frac{5}{24} \\ 0 & \frac{1}{3} & -\frac{1}{6} \\ 0 & 0 & \frac{1}{4} \end{pmatrix}
+S^{-1}H^{-1} = \begin{pmatrix} \frac{1}{2} & 0 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 1 & -1 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} \frac{1}{2}(1) + 0(0) & \frac{1}{2}(-1) + 0(1) \\ 0(1) + 1(0) & 0(-1) + 1(1) \end{pmatrix} = \begin{pmatrix} \frac{1}{2} & -\frac{1}{2} \\ 0 & 1 \end{pmatrix}
 $$
 
-### 2. Verification by Matrix Multiplication
+---
 
-We verify the product $U U^{-1}$:
+### 3. Comparison and Verification of the Incorrect Order ($H^{-1}S^{-1}$)
 
-$$
-U U^{-1} = \begin{pmatrix} 2 & 1 & -1 \\ 0 & 3 & 2 \\ 0 & 0 & 4 \end{pmatrix} \begin{pmatrix} \frac{1}{2} & -\frac{1}{6} & \frac{5}{24} \\ 0 & \frac{1}{3} & -\frac{1}{6} \\ 0 & 0 & \frac{1}{4} \end{pmatrix}
-$$
-
-- **Row 1 calculations:**
-  - $(1,1): 2\left(\frac{1}{2}\right) + 1(0) + (-1)(0) = 1 + 0 + 0 = 1$
-  - $(1,2): 2\left(-\frac{1}{6}\right) + 1\left(\frac{1}{3}\right) + (-1)(0) = -\frac{1}{3} + \frac{1}{3} + 0 = 0$
-  - $(1,3): 2\left(\frac{5}{24}\right) + 1\left(-\frac{1}{6}\right) + (-1)\left(\frac{1}{4}\right) = \frac{5}{12} - \frac{2}{12} - \frac{3}{12} = 0$
-
-- **Row 2 calculations:**
-  - $(2,1): 0\left(\frac{1}{2}\right) + 3(0) + 2(0) = 0$
-  - $(2,2): 0\left(-\frac{1}{6}\right) + 3\left(\frac{1}{3}\right) + 2(0) = 0 + 1 + 0 = 1$
-  - $(2,3): 0\left(\frac{5}{24}\right) + 3\left(-\frac{1}{6}\right) + 2\left(\frac{1}{4}\right) = 0 - \frac{1}{2} + \frac{1}{2} = 0$
-
-- **Row 3 calculations:**
-  - $(3,1): 0\left(\frac{1}{2}\right) + 0(0) + 4(0) = 0$
-  - $(3,2): 0\left(-\frac{1}{6}\right) + 0\left(\frac{1}{3}\right) + 4(0) = 0$
-  - $(3,3): 0\left(\frac{5}{24}\right) + 0\left(-\frac{1}{6}\right) + 4\left(\frac{1}{4}\right) = 1$
+Comparing the results of Method 1 and Method 2 confirms they are identical:
 
 $$
-U U^{-1} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} = I_3
+T^{-1} = \begin{pmatrix} \frac{1}{2} & -\frac{1}{2} \\ 0 & 1 \end{pmatrix} = S^{-1}H^{-1}
 $$
 
-Since $U U^{-1} = I_3$, the result is verified.
+Now, we compute the product in the incorrect order $H^{-1}S^{-1}$:
+
+$$
+H^{-1}S^{-1} = \begin{pmatrix} 1 & -1 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} \frac{1}{2} & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 1\left(\frac{1}{2}\right) + (-1)(0) & 1(0) + (-1)(1) \\ 0\left(\frac{1}{2}\right) + 1(0) & 0(0) + 1(1) \end{pmatrix} = \begin{pmatrix} \frac{1}{2} & -1 \\ 0 & 1 \end{pmatrix}
+$$
+
+Comparing the $(1,2)$ entries ($-\frac{1}{2} \neq -1$) shows that the incorrect order yields a different matrix:
+
+$$
+H^{-1}S^{-1} \neq (HS)^{-1}
+$$
+
+---
+
+### 4. Explanation of the Rule: Undoing Operations from the End
+
+When the composite transformation $T = HS$ acts on an input vector $v$, matrix multiplication is evaluated from right to left:
+
+$$
+Tv = (HS)v = H(Sv)
+$$
+
+This means that **scaling ($S$) is applied first**, and **shear ($H$) is applied second (at the end)**. 
+
+To reverse this process and restore the original vector $v$, we must undo the operations in reverse chronological order—starting from the last operation applied:
+1. First, undo the shear $H$ by applying $H^{-1}$.
+2. Second, undo the scaling $S$ by applying $S^{-1}$.
+
+Algebraically, this corresponds to multiplying by $S^{-1}H^{-1}$:
+
+$$
+(S^{-1}H^{-1})(HS)v = S^{-1}(H^{-1}H)Sv = S^{-1}ISv = S^{-1}Sv = v
+$$
+
+Using $H^{-1}S^{-1}$ attempts to undo the scaling before undoing the shear, which fails to reverse the transformation properly.
