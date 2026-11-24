@@ -14,7 +14,7 @@ to canonical form. Give the center and semiaxis lengths. Check that substituting
 
 ### 1. Reducing to Canonical Form by Completing the Square
 
-Start with the given general second-degree equation[cite: 1]:
+Start with the given general second-degree equation:
 
 $$
 4x^2 + 9y^2 - 16x + 18y - 11 = 0
@@ -48,7 +48,7 @@ $$
 \frac{4(x - 2)^2}{36} + \frac{9(y + 1)^2}{36} = 1 \implies \frac{(x - 2)^2}{9} + \frac{(y + 1)^2}{4} = 1
 $$
 
-This is the **canonical form** of the shifted ellipse[cite: 1].
+This is the **canonical form** of the shifted ellipse.
 
 ---
 
@@ -70,7 +70,7 @@ $$
 4(2 - 2)^2 + 9(-1 + 1)^2 - 36 = 0 + 0 - 36 = -36
 $$
 
-Now substitute $(x, y) = (2, -1)$ directly into the original left-hand side $4x^2 + 9y^2 - 16x + 18y - 11$[cite: 1]:
+Now substitute $(x, y) = (2, -1)$ directly into the original left-hand side $4x^2 + 9y^2 - 16x + 18y - 11$:
 
 $$
 4(2)^2 + 9(-1)^2 - 16(2) + 18(-1) - 11 = 16 + 9 - 32 - 18 - 11 = 25 - 61 = -36

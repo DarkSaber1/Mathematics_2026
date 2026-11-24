@@ -14,7 +14,7 @@ to canonical form. Find the center and radius. Give two points on the sphere and
 
 ### 1. Reducing to Canonical Form by Completing the Square
 
-Start with the general equation of the sphere in $\mathbb{R}^3$[cite: 1]:
+Start with the general equation of the sphere in $\mathbb{R}^3$:
 
 $$
 x^2 + y^2 + z^2 - 4x + 2y - 6z - 2 = 0
@@ -37,7 +37,7 @@ $$
 (x^2 - 4x + 4) + (y^2 + 2y + 1) + (z^2 - 6z + 9) = 2 + 4 + 1 + 9
 $$
 
-Factor each quadratic trinomial into a squared binomial to obtain the **canonical form** $(x - x_0)^2 + (y - y_0)^2 + (z - z_0)^2 = r^2$[cite: 1]:
+Factor each quadratic trinomial into a squared binomial to obtain the **canonical form** $(x - x_0)^2 + (y - y_0)^2 + (z - z_0)^2 = r^2$:
 
 $$
 (x - 2)^2 + (y + 1)^2 + (z - 3)^2 = 16
@@ -47,7 +47,7 @@ $$
 
 ### 2. Center and Radius
 
-Comparing $(x - 2)^2 + (y - (-1))^2 + (z - 3)^2 = 4^2$ with the standard sphere equation $(x - x_0)^2 + (y - y_0)^2 + (z - z_0)^2 = r^2$[cite: 1]:
+Comparing $(x - 2)^2 + (y - (-1))^2 + (z - 3)^2 = 4^2$ with the standard sphere equation $(x - x_0)^2 + (y - y_0)^2 + (z - z_0)^2 = r^2$:
 
 - **Center:** $(x_0, y_0, z_0) = (2, -1, 3)$
 - **Radius:** $r = \sqrt{16} = 4$
@@ -56,7 +56,7 @@ Comparing $(x - 2)^2 + (y - (-1))^2 + (z - 3)^2 = 4^2$ with the standard sphere 
 
 ### 3. Finding Two Points on the Sphere and Checking Them in the Equation
 
-Starting from the center $(2, -1, 3)$ and moving $r = 4$ units in the positive and negative $x$-directions produces two simple points on the sphere[cite: 1]:
+Starting from the center $(2, -1, 3)$ and moving $r = 4$ units in the positive and negative $x$-directions produces two simple points on the sphere:
 
 - **Point 1:** $P_1 = (2 + 4,\, -1,\, 3) = (6, -1, 3)$
 - **Point 2:** $P_2 = (2 - 4,\, -1,\, 3) = (-2, -1, 3)$
@@ -89,4 +89,4 @@ $$
 (-2)^2 + (-1)^2 + 3^2 - 4(-2) + 2(-1) - 6(3) - 2 = 4 + 1 + 9 + 8 - 2 - 18 - 2 = 22 - 22 = 0 \quad (\text{True})
 $$
 
-Both points satisfy both equations, verifying our center, radius, and canonical form[cite: 1].
+Both points satisfy both equations, verifying our center, radius, and canonical form.

@@ -14,7 +14,7 @@ find the intercepts with the $x$-axis, the asymptotes, and make a sketch. Explai
 
 ### 1. Finding the Intercepts with the $x$-Axis
 
-To find where the hyperbola crosses the $x$-axis, set $y = 0$ in the equation[cite: 1]:
+To find where the hyperbola crosses the $x$-axis, set $y = 0$ in the equation:
 
 $$
 \frac{x^2}{16} - \frac{0^2}{9} = 1 \implies \frac{x^2}{16} = 1 \implies x^2 = 16 \implies x = \pm 4
@@ -31,7 +31,7 @@ This gives the two vertices ($x$-intercepts) of the hyperbola:
 
 ### 2. Finding the Asymptotes
 
-Comparing $\frac{x^2}{16} - \frac{y^2}{9} = 1$ with the canonical hyperbola form $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$[cite: 1], we identify:
+Comparing $\frac{x^2}{16} - \frac{y^2}{9} = 1$ with the canonical hyperbola form $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$, we identify:
 
 $$
 a = \sqrt{16} = 4, \qquad b = \sqrt{9} = 3

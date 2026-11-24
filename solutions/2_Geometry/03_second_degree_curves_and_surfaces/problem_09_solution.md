@@ -20,7 +20,7 @@ $$
 \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1
 $$
 
-Comparing $\frac{x^2}{9} + \frac{y^2}{4} + \frac{z^2}{16} = 1$[cite: 1] directly with the canonical form:
+Comparing $\frac{x^2}{9} + \frac{y^2}{4} + \frac{z^2}{16} = 1$ directly with the canonical form:
 
 - **Semiaxis along the $x$-axis:** $a = \sqrt{9} = 3$
 - **Semiaxis along the $y$-axis:** $b = \sqrt{4} = 2$
@@ -30,7 +30,7 @@ Comparing $\frac{x^2}{9} + \frac{y^2}{4} + \frac{z^2}{16} = 1$[cite: 1] directly
 
 ### 2. Describing the Cross-Section $z = 0$
 
-Setting $z = 0$ intersects the ellipsoid with the horizontal $xy$-plane[cite: 1]:
+Setting $z = 0$ intersects the ellipsoid with the horizontal $xy$-plane:
 
 $$
 \frac{x^2}{9} + \frac{y^2}{4} + \frac{0^2}{16} = 1 \implies \frac{x^2}{9} + \frac{y^2}{4} = 1
@@ -42,7 +42,7 @@ $$
 
 ### 3. How the Cross-Sections $z = c$ Change for $|c| < 4$
 
-Intersecting the ellipsoid with a horizontal plane $z = c$ (where $|c| < 4$, i.e., $-4 < c < 4$) gives[cite: 1]:
+Intersecting the ellipsoid with a horizontal plane $z = c$ (where $|c| < 4$, i.e., $-4 < c < 4$) gives:
 
 $$
 \frac{x^2}{9} + \frac{y^2}{4} = 1 - \frac{c^2}{16}

@@ -20,7 +20,7 @@ For several values $z=c$, check whether the cross-section exists and what its ra
 
 ### 1. First Surface: $x^2 + y^2 - z^2 = 1$ (Hyperboloid of One Sheet)
 
-Rewriting the equation for a fixed horizontal plane $z = c$ gives[cite: 1]:
+Rewriting the equation for a fixed horizontal plane $z = c$ gives:
 
 $$
 x^2 + y^2 = 1 + c^2
@@ -48,7 +48,7 @@ Evaluating for several representative values of $z = c$:
 
 ### 2. Second Surface: $x^2 + y^2 - z^2 = -1$ (Hyperboloid of Two Sheets)
 
-Rewriting the equation for a fixed horizontal plane $z = c$ gives[cite: 1]:
+Rewriting the equation for a fixed horizontal plane $z = c$ gives:
 
 $$
 x^2 + y^2 = c^2 - 1
@@ -72,9 +72,9 @@ Evaluating for several representative values of $z = c$:
 
 - **Qualitative Shape & Sketch Description:**  
   Because there are no real points in the horizontal slab $-1 < z < 1$, the surface is split into **two completely disconnected pieces** symmetric around the $z$-axis (a **hyperboloid of two sheets**):
-  - An **upper bowl** starting at its lowest vertex $(0, 0, 1)$ and opening upward for $z \ge 1$ with circular cross-sections of growing radius $\sqrt{z^2 - 1}$.
-  - A **lower inverted bowl** starting at its highest vertex $(0, 0, -1)$ and opening downward for $z \le -1$ with identical circular cross-sections.
-  - Vertical cross-sections $x = 0$ ($z^2 - y^2 = 1$) and $y = 0$ ($z^2 - x^2 = 1$) form upward-and-downward opening hyperbolas with vertices at $(0, 0, \pm 1)$.
+- An **upper bowl** starting at its lowest vertex $(0, 0, 1)$ and opening upward for $z \ge 1$ with circular cross-sections of growing radius $\sqrt{z^2 - 1}$.
+- A **lower inverted bowl** starting at its highest vertex $(0, 0, -1)$ and opening downward for $z \le -1$ with identical circular cross-sections.
+- Vertical cross-sections $x = 0$ ($z^2 - y^2 = 1$) and $y = 0$ ($z^2 - x^2 = 1$) form upward-and-downward opening hyperbolas with vertices at $(0, 0, \pm 1)$.
 
 ---
 

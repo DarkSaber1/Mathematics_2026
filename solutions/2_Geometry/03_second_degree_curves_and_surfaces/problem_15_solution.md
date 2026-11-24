@@ -43,7 +43,7 @@ $$
 4(x - 1)^2 + 9(y + 2)^2 = 36
 $$
 
-Divide both sides by $36$ to bring the equation to **canonical form**[cite: 1]:
+Divide both sides by $36$ to bring the equation to **canonical form**:
 
 $$
 \frac{4(x - 1)^2}{36} + \frac{9(y + 2)^2}{36} = 1 \implies \frac{(x - 1)^2}{9} + \frac{(y + 2)^2}{4} = 1
@@ -67,26 +67,26 @@ The curve is a horizontally elongated oval centered at $(1, -2)$ in the fourth q
 
 #### 1. Analyzing Cross-Sections Before Naming the Surface
 1. **Horizontal Cross-Sections $z = c$ (planes parallel to the $xy$-plane):**  
-   Substituting $z = c$ yields[cite: 1]:
+   Substituting $z = c$ yields:
 
 $$
 4x^2 + y^2 = c^2
 $$
 
-   - **For $c = 0$:** $4x^2 + y^2 = 0$, which has only the single real solution $(x, y, z) = (0, 0, 0)$ (a **single point** at the origin).
-   - **For $c \neq 0$:** Dividing both sides by $c^2 > 0$ puts the slice into canonical ellipse form:
+- **For $c = 0$:** $4x^2 + y^2 = 0$, which has only the single real solution $(x, y, z) = (0, 0, 0)$ (a **single point** at the origin).
+- **For $c \neq 0$:** Dividing both sides by $c^2 > 0$ puts the slice into canonical ellipse form:
 
 $$
 \frac{x^2}{\left(\frac{|c|}{2}\right)^2} + \frac{y^2}{|c|^2} = 1
 $$
 
      Every horizontal slice at height $z = c \neq 0$ is an **ellipse** centered on the $z$-axis at $(0, 0, c)$ whose semiaxes scale linearly with $|c|$:
-     - **Semiaxis along the $x$-direction:** $a(c) = \frac{|c|}{2}$
-     - **Semiaxis along the $y$-direction:** $b(c) = |c|$
-     - **Scale Comparison:** Because $b(c) = 2\,a(c)$, every horizontal cross-section is stretched **twice as wide along the $y$-axis as along the $x$-axis** (a $1 : 2$ aspect ratio between the $x$- and $y$-directions).
+- **Semiaxis along the $x$-direction:** $a(c) = \frac{|c|}{2}$
+- **Semiaxis along the $y$-direction:** $b(c) = |c|$
+- **Scale Comparison:** Because $b(c) = 2\,a(c)$, every horizontal cross-section is stretched **twice as wide along the $y$-axis as along the $x$-axis** (a $1 : 2$ aspect ratio between the $x$- and $y$-directions).
 
 2. **Vertical Cross-Section by the Plane $x = 0$ (in the $yz$-plane):**  
-   Setting $x = 0$ gives[cite: 1]:
+   Setting $x = 0$ gives:
 
 $$
 y^2 = z^2 \implies z = \pm y
@@ -95,7 +95,7 @@ $$
    This consists of **two intersecting straight lines** ($z = y$ and $z = -y$) crossing at $(0, 0, 0)$ at a $45^\circ$ angle to the $y$- and $z$-axes (slope $\left|\frac{\Delta z}{\Delta y}\right| = 1$).
 
 3. **Vertical Cross-Section by the Plane $y = 0$ (in the $xz$-plane):**  
-   Setting $y = 0$ gives[cite: 1]:
+   Setting $y = 0$ gives:
 
 $$
 4x^2 = z^2 \implies z = \pm 2x
@@ -104,6 +104,6 @@ $$
    This consists of **two steeper intersecting straight lines** ($z = 2x$ and $z = -2x$) crossing at $(0, 0, 0)$ with slope $\left|\frac{\Delta z}{\Delta x}\right| = 2$, reflecting the compressed scale along the $x$-axis compared to the $y$-axis.
 
 #### 2. Identification and Geometric Description of the Sketch
-- **Surface Identification:** **Elliptic Double Cone** centered at the origin $(0, 0, 0)$ and symmetric about the $z$-axis[cite: 1].
+- **Surface Identification:** **Elliptic Double Cone** centered at the origin $(0, 0, 0)$ and symmetric about the $z$-axis.
 - **Qualitative Sketch Description:**  
   Two infinite conical nappes meet at their shared apex $(0, 0, 0)$ and flare linearly upward ($z > 0$) and downward ($z < 0$). Unlike a circular cone, its horizontal cross-sections are **ellipses** elongated by a factor of $2$ in the $y$-direction relative to the $x$-direction (at $z = \pm 2$, for example, the ellipse spans $x \in [-1, 1]$ and $y \in [-2, 2]$). Consequently, the cone rises steeply along the $xz$-profile ($z = \pm 2x$) and opens twice as broadly along the $yz$-profile ($z = \pm y$).
