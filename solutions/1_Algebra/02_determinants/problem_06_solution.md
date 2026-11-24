@@ -1,15 +1,15 @@
 ## Exercise 6. Parameter and Invertibility
 
 ### Problem Definition
-Given the $2 \times 2$ parameterized matrix:[cite: 1]
+Given the $2 \times 2$ parameterized matrix:
 
 $$
 A(t) = \begin{pmatrix} t & 1 \\ 2 & t \end{pmatrix}
 $$
 
-1. Compute the determinant of $A(t)$ as a function of the parameter $t$.[cite: 1]
-2. Find all real values of $t$ for which matrix $A(t)$ is **not invertible** (singular).[cite: 1]
-3. Explain in detail how your answer relates to the determinant being zero and the geometric/algebraic meaning of matrix invertibility.[cite: 1]
+1. Compute the determinant of $A(t)$ as a function of the parameter $t$.
+2. Find all real values of $t$ for which matrix $A(t)$ is **not invertible** (singular).
+3. Explain in detail how your answer relates to the determinant being zero and the geometric/algebraic meaning of matrix invertibility.
 
 ---
 
@@ -23,12 +23,12 @@ $$
 \det \begin{pmatrix} a & b \\ c & d \end{pmatrix} = (a \cdot d) - (b \cdot c)
 $$
 
-For $A(t) = \begin{pmatrix} t & 1 \\ 2 & t \end{pmatrix}$:[cite: 1]
+For $A(t) = \begin{pmatrix} t & 1 \\ 2 & t \end{pmatrix}$:
 
-* Main diagonal product: $t \cdot t = t^2$
-* Anti-diagonal product: $1 \cdot 2 = 2$
+- Main diagonal product: $t \cdot t = t^2$
+- Anti-diagonal product: $1 \cdot 2 = 2$
 
-Subtracting the anti-diagonal product from the main diagonal product yields the polynomial expression:[cite: 1]
+Subtracting the anti-diagonal product from the main diagonal product yields the polynomial expression:
 
 $$
 \det A(t) = t^2 - 2
@@ -39,7 +39,7 @@ $$
 #### Step 2: Finding Values of $t$ for Non-Invertibility
 
 ##### The Invertibility Criterion
-By the **Invertible Matrix Theorem**, a square matrix $M$ is **not invertible** (also called **singular**) if and only if its determinant equals zero:[cite: 1]
+By the **Invertible Matrix Theorem**, a square matrix $M$ is **not invertible** (also called **singular**) if and only if its determinant equals zero:
 
 $$
 A(t) \text{ is not invertible} \iff \det A(t) = 0
@@ -73,7 +73,7 @@ Thus, the matrix $A(t)$ is **not invertible** if and only if $t = \sqrt{2}$ or $
 ##### 1. Algebraic Explanation (Linear Dependence)
 The determinant measures whether the rows (or columns) of a matrix are linearly independent.
 
-* **Case 1: $t = \sqrt{2}$**
+- **Case 1: $t = \sqrt{2}$**
   The matrix becomes:
   $$
   A(\sqrt{2}) = \begin{pmatrix} \sqrt{2} & 1 \\ 2 & \sqrt{2} \end{pmatrix}
@@ -84,7 +84,7 @@ The determinant measures whether the rows (or columns) of a matrix are linearly 
   $$
   Because the rows are linearly dependent, the matrix loses full rank ($\text{rank} = 1 < 2$), which means it cannot be inverted.
 
-* **Case 2: $t = -\sqrt{2}$**
+- **Case 2: $t = -\sqrt{2}$**
   The matrix becomes:
   $$
   A(-\sqrt{2}) = \begin{pmatrix} -\sqrt{2} & 1 \\ 2 & -\sqrt{2} \end{pmatrix}
@@ -113,8 +113,8 @@ If $t = \pm\sqrt{2}$, the denominator $t^2 - 2$ becomes $0$, leading to division
 ##### 3. Geometric Transformation Perspective
 Geometrically, a $2 \times 2$ matrix maps the $2\text{D}$ plane onto another space, and $|\det A(t)|$ represents the **area scaling factor** of this transformation.
 
-* When $t \neq \pm\sqrt{2}$, the matrix maps a unit square into a parallelogram of area $|t^2 - 2| > 0$, making the mapping reversible (invertible).
-* When $t = \pm\sqrt{2}$, $\det A(t) = 0$, meaning the 2D plane is squashed/compressed down onto a 1D line (area = 0). Since information is collapsed into a lower dimension, the transformation cannot be undone, making $A(t)$ non-invertible.
+- When $t \neq \pm\sqrt{2}$, the matrix maps a unit square into a parallelogram of area $|t^2 - 2| > 0$, making the mapping reversible (invertible).
+- When $t = \pm\sqrt{2}$, $\det A(t) = 0$, meaning the 2D plane is squashed/compressed down onto a 1D line (area = 0). Since information is collapsed into a lower dimension, the transformation cannot be undone, making $A(t)$ non-invertible.
 
 ---
 

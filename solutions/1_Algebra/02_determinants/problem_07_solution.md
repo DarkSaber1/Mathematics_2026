@@ -1,15 +1,15 @@
 ## Exercise 7. Using Properties Instead of Recomputing
 
 ### Problem Definition
-Suppose that $A$ is a $3 \times 3$ matrix with determinant $\det A = -4$.[cite: 1] 
+Suppose that $A$ is a $3 \times 3$ matrix with determinant $\det A = -4$. 
 
-Without knowing the individual entries of matrix $A$, compute the following determinants:[cite: 1]
-1. $\det(2A)$[cite: 1]
-2. $\det(A^T)$[cite: 1]
-3. $\det(A^2)$[cite: 1]
-4. $\det(-A)$[cite: 1]
+Without knowing the individual entries of matrix $A$, compute the following determinants:
+1. $\det(2A)$
+2. $\det(A^T)$
+3. $\det(A^2)$
+4. $\det(-A)$
 
-For each calculation, state and justify the determinant property used.[cite: 1]
+For each calculation, state and justify the determinant property used.
 
 ---
 
@@ -23,14 +23,14 @@ For each calculation, state and justify the determinant property used.[cite: 1]
 > $$ \det(c M) = c^n \cdot \det M $$
 
 ##### Step-by-Step Calculation
-* Matrix $A$ is a $3 \times 3$ matrix, so $n = 3$.
-* The scalar multiplier is $c = 2$.
-* Applying the formula:
+- Matrix $A$ is a $3 \times 3$ matrix, so $n = 3$.
+- The scalar multiplier is $c = 2$.
+- Applying the formula:
 
 $$ \det(2A) = 2^3 \cdot \det A $$
 
-* Compute $2^3 = 8$.
-* Substitute $\det A = -4$:
+- Compute $2^3 = 8$.
+- Substitute $\det A = -4$:
 
 $$ \det(2A) = 8 \cdot (-4) = -32 $$
 
@@ -46,11 +46,11 @@ $$ \det(2A) = 8 \cdot (-4) = -32 $$
 > This holds because row operations on $M^T$ correspond directly to column operations on $M$, and transpose operations preserve the algebraic expansion of the determinant.
 
 ##### Step-by-Step Calculation
-* Apply the property directly to matrix $A$:
+- Apply the property directly to matrix $A$:
 
 $$ \det(A^T) = \det A $$
 
-* Substitute $\det A = -4$:
+- Substitute $\det A = -4$:
 
 $$ \det(A^T) = -4 $$
 
@@ -66,11 +66,11 @@ $$ \det(A^T) = -4 $$
 > This follows directly from the multiplicative property of determinants: $\det(M \cdot M) = \det M \cdot \det M = (\det M)^2$.
 
 ##### Step-by-Step Calculation
-* Apply the power rule for $k = 2$:
+- Apply the power rule for $k = 2$:
 
 $$ \det(A^2) = (\det A)^2 $$
 
-* Substitute $\det A = -4$:
+- Substitute $\det A = -4$:
 
 $$ \det(A^2) = (-4)^2 = 16 $$
 
@@ -87,12 +87,12 @@ $$ \det(A^2) = (-4)^2 = 16 $$
 > * If dimension $n$ is **odd**, $(-1)^n = -1 \implies \det(-M) = -\det M$.
 
 ##### Step-by-Step Calculation
-* Since $A$ is a $3 \times 3$ matrix, dimension $n = 3$ (odd).
-* Apply the scalar formula with $c = -1$ and $n = 3$:
+- Since $A$ is a $3 \times 3$ matrix, dimension $n = 3$ (odd).
+- Apply the scalar formula with $c = -1$ and $n = 3$:
 
 $$ \det(-A) = (-1)^3 \cdot \det A = -1 \cdot \det A $$
 
-* Substitute $\det A = -4$:
+- Substitute $\det A = -4$:
 
 $$ \det(-A) = -1 \cdot (-4) = 4 $$
 

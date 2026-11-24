@@ -1,14 +1,14 @@
 ## Exercise 5. Row Operations
 
 ### Problem Definition
-Given the $3 \times 3$ matrix:[cite: 1]
+Given the $3 \times 3$ matrix:
 
 $$
 A = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 1 & 0 \\ -1 & 4 & 2 \end{pmatrix}
 $$
 
-1. Find $\det A$ by systematically simplifying matrix $A$ into an upper triangular matrix using elementary row operations.[cite: 1]
-2. At every individual operation step, state explicitly whether and how the determinant value changes.[cite: 1]
+1. Find $\det A$ by systematically simplifying matrix $A$ into an upper triangular matrix using elementary row operations.
+2. At every individual operation step, state explicitly whether and how the determinant value changes.
 3. Verify the final result using an independent calculation (such as Sarrus' Rule or cofactor expansion).
 
 ---
@@ -48,24 +48,24 @@ A = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 1 & 0 \\ -1 & 4 & 2 \end{pmatrix}
 $$
 
 ##### Operation 1A: $R_2 \leftarrow R_2 - 2 R_1$
-* **Goal:** Eliminate entry $a_{21} = 2$.
-* **Calculation:**
+- **Goal:** Eliminate entry $a_{21} = 2$.
+- **Calculation:**
   $$
   R_2 - 2 R_1 = [2 - 2(1),\; 1 - 2(2),\; 0 - 2(3)] = [0,\; -3,\; -6]
   $$
-* **Effect on Determinant:** Row addition operation—**Determinant remains unchanged.**
+- **Effect on Determinant:** Row addition operation—**Determinant remains unchanged.**
 
 $$
 \det A = \det \begin{pmatrix} 1 & 2 & 3 \\ 0 & -3 & -6 \\ -1 & 4 & 2 \end{pmatrix}
 $$
 
 ##### Operation 1B: $R_3 \leftarrow R_3 + R_1$
-* **Goal:** Eliminate entry $a_{31} = -1$.
-* **Calculation:**
+- **Goal:** Eliminate entry $a_{31} = -1$.
+- **Calculation:**
   $$
   R_3 + R_1 = [-1 + 1,\; 4 + 2,\; 2 + 3] = [0,\; 6,\; 5]
   $$
-* **Effect on Determinant:** Row addition operation—**Determinant remains unchanged.**
+- **Effect on Determinant:** Row addition operation—**Determinant remains unchanged.**
 
 Let $A_1$ be the matrix after these two row additions:
 
@@ -80,8 +80,8 @@ $$
 Notice that all elements in Row 2 of $A_1$ ($[0, -3, -6]$) share a common scalar factor of $-3$.
 
 ##### Operation 2: Factor out $-3$ from Row 2
-* **Goal:** Make the pivot element in position $(2,2)$ equal to $1$.
-* **Effect on Determinant:** Factoring out a scalar $k = -3$ from a single row scales the determinant expression by $-3$.
+- **Goal:** Make the pivot element in position $(2,2)$ equal to $1$.
+- **Effect on Determinant:** Factoring out a scalar $k = -3$ from a single row scales the determinant expression by $-3$.
 
 $$
 \det A_1 = -3 \cdot \det A_2
@@ -100,12 +100,12 @@ $$
 We now eliminate entry $a_{32} = 6$ in matrix $A_2$.
 
 ##### Operation 3: $R_3 \leftarrow R_3 - 6 R_2$
-* **Goal:** Eliminate the entry below the main diagonal in Column 2.
-* **Calculation:**
+- **Goal:** Eliminate the entry below the main diagonal in Column 2.
+- **Calculation:**
   $$
   R_3 - 6 R_2 = [0 - 6(0),\; 6 - 6(1),\; 5 - 6(2)] = [0,\; 0,\; -7]
   $$
-* **Effect on Determinant:** Row addition operation—**Determinant remains unchanged** ($\det A_3 = \det A_2$).
+- **Effect on Determinant:** Row addition operation—**Determinant remains unchanged** ($\det A_3 = \det A_2$).
 
 The resulting matrix $A_3$ is:
 
@@ -160,21 +160,21 @@ $$
 \end{array}
 $$
 
-* **Primary Diagonals (Top-Left to Bottom-Right):**
-  * $P_1 = 1 \cdot 1 \cdot 2 = 2$
-  * $P_2 = 2 \cdot 0 \cdot (-1) = 0$
-  * $P_3 = 3 \cdot 2 \cdot 4 = 24$
+- **Primary Diagonals (Top-Left to Bottom-Right):**
+  - $P_1 = 1 \cdot 1 \cdot 2 = 2$
+  - $P_2 = 2 \cdot 0 \cdot (-1) = 0$
+  - $P_3 = 3 \cdot 2 \cdot 4 = 24$
   
   $$\text{Sum}_{\text{primary}} = 2 + 0 + 24 = 26$$
 
-* **Secondary Diagonals (Bottom-Left to Top-Right):**
-  * $S_1 = (-1) \cdot 1 \cdot 3 = -3$
-  * $S_2 = 4 \cdot 0 \cdot 1 = 0$
-  * $S_3 = 2 \cdot 2 \cdot 2 = 8$
+- **Secondary Diagonals (Bottom-Left to Top-Right):**
+  - $S_1 = (-1) \cdot 1 \cdot 3 = -3$
+  - $S_2 = 4 \cdot 0 \cdot 1 = 0$
+  - $S_3 = 2 \cdot 2 \cdot 2 = 8$
   
   $$\text{Sum}_{\text{secondary}} = (-3) + 0 + 8 = 5$$
 
-* **Final Computation:**
+- **Final Computation:**
   $$
   \det A = \text{Sum}_{\text{primary}} - \text{Sum}_{\text{secondary}} = 26 - 5 = 21
   $$

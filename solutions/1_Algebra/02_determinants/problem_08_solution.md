@@ -1,14 +1,14 @@
 ## Exercise 8. Determinant of a Product
 
 ### Problem Definition
-Let $A$ and $B$ be $n \times n$ square matrices such that:[cite: 1]
+Let $A$ and $B$ be $n \times n$ square matrices such that:
 
 $$ \det A = 3, \qquad \det B = -5 $$
 
-1. Compute $\det(AB)$.[cite: 1]
-2. Compute $\det(BA)$.[cite: 1]
-3. Determine whether $\det(A^{-1}B)$ exists, and if so, compute its value.[cite: 1]
-4. Explain why $\det(AB) = \det(BA)$ even though matrix multiplication is generally non-commutative ($AB \neq BA$).[cite: 1]
+1. Compute $\det(AB)$.
+2. Compute $\det(BA)$.
+3. Determine whether $\det(A^{-1}B)$ exists, and if so, compute its value.
+4. Explain why $\det(AB) = \det(BA)$ even though matrix multiplication is generally non-commutative ($AB \neq BA$).
 
 ---
 
@@ -22,7 +22,7 @@ $$ \det A = 3, \qquad \det B = -5 $$
 > $$ \det(M N) = \det M \cdot \det N $$
 
 ##### Calculation
-Substituting the given values $\det A = 3$ and $\det B = -5$:[cite: 1]
+Substituting the given values $\det A = 3$ and $\det B = -5$:
 
 $$ \det(AB) = \det A \cdot \det B = (3) \cdot (-5) = -15 $$
 
@@ -40,8 +40,8 @@ $$ \det(BA) = \det B \cdot \det A = (-5) \cdot (3) = -15 $$
 #### Step 3: Computation of $\det(A^{-1}B)$
 
 ##### 1. Existence Check for $A^{-1}$
-A square matrix $A$ is invertible if and only if $\det A \neq 0$.[cite: 1]
-Since $\det A = 3 \neq 0$, matrix $A$ is non-singular and its inverse $A^{-1}$ **is guaranteed to exist**.[cite: 1]
+A square matrix $A$ is invertible if and only if $\det A \neq 0$.
+Since $\det A = 3 \neq 0$, matrix $A$ is non-singular and its inverse $A^{-1}$ **is guaranteed to exist**.
 
 ##### 2. Inverse Determinant Property
 > For an invertible matrix $M$, the determinant of its inverse is the reciprocal of its determinant:
@@ -70,8 +70,8 @@ $$ \det(A^{-1}B) = \left( \frac{1}{3} \right) \cdot (-5) = -\frac{5}{3} $$
    The determinant function $\det: \mathbb{R}^{n \times n} \to \mathbb{R}$ maps a matrix to a single real number (scalar).
 
 3. **Algebraic Proof:**
-   * $\det(AB) = \det A \cdot \det B$
-   * $\det(BA) = \det B \cdot \det A$
+  - $\det(AB) = \det A \cdot \det B$
+  - $\det(BA) = \det B \cdot \det A$
 
    Since $\det A$ and $\det B$ are real numbers in $\mathbb{R}$, and multiplication of real numbers is commutative ($x \cdot y = y \cdot x$ for all $x, y \in \mathbb{R}$):
 
@@ -83,7 +83,7 @@ Thus, even though $AB$ and $BA$ are completely different matrices, their determi
 
 ### Summary of Results for Exercise 8
 
-* **$\det(AB) = -15$**
-* **$\det(BA) = -15$**
-* **$\det(A^{-1}B) = -\frac{5}{3}$** (Exists because $\det A = 3 \neq 0$)
-* **Commutativity Explanation:** Matrix multiplication $AB \neq BA$ is non-commutative, but scalar product $\det A \cdot \det B = \det B \cdot \det A$ is commutative.
+- **$\det(AB) = -15$**
+- **$\det(BA) = -15$**
+- **$\det(A^{-1}B) = -\frac{5}{3}$** (Exists because $\det A = 3 \neq 0$)
+- **Commutativity Explanation:** Matrix multiplication $AB \neq BA$ is non-commutative, but scalar product $\det A \cdot \det B = \det B \cdot \det A$ is commutative.

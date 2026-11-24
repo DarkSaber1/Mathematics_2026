@@ -1,25 +1,25 @@
 ## Exercise 11. Shortening the Calculation with Row Operations
 
 ### Problem Definition
-Given the $3 \times 3$ matrix:[cite: 1]
+Given the $3 \times 3$ matrix:
 
 $$
 A = \begin{pmatrix} 1 & 2 & 3 \\ 1 & 3 & 4 \\ 1 & 4 & 6 \end{pmatrix}
 $$
 
-1. Compute $\det A$ by first performing elementary row operations that create as many zeros as possible.[cite: 1]
-2. State explicitly which row operations do not change the determinant.[cite: 1]
-3. Explain how strategic planning simplifies the computation compared to a mechanical full expansion.[cite: 1]
+1. Compute $\det A$ by first performing elementary row operations that create as many zeros as possible.
+2. State explicitly which row operations do not change the determinant.
+3. Explain how strategic planning simplifies the computation compared to a mechanical full expansion.
 
 ---
 
 ### Key Determinant Property: Row Addition Rule
 
-> **Property:** Adding a scalar multiple of one row to another row ($R_i \leftarrow R_i + k R_j$) does **not change** the value of the determinant:[cite: 1]
+> **Property:** Adding a scalar multiple of one row to another row ($R_i \leftarrow R_i + k R_j$) does **not change** the value of the determinant:
 >
 > $$ \det(A') = \det(A) $$
 
-By using row addition/subtraction exclusively, we can transform matrix $A$ into an upper triangular matrix without introducing any scaling factors or sign changes, making the final determinant calculation immediate.[cite: 1]
+By using row addition/subtraction exclusively, we can transform matrix $A$ into an upper triangular matrix without introducing any scaling factors or sign changes, making the final determinant calculation immediate.
 
 ---
 
@@ -39,19 +39,19 @@ $$
 
 Notice that all entries in Column 1 are equal to $1$ ($a_{11} = 1, a_{21} = 1, a_{31} = 1$). 
 
-By using Row 1 ($R_1$) as a pivot row and subtracting $R_1$ from Row 2 ($R_2$) and Row 3 ($R_3$), we can instantly eliminate the non-zero entries in Column 1 below the top-left entry.[cite: 1]
+By using Row 1 ($R_1$) as a pivot row and subtracting $R_1$ from Row 2 ($R_2$) and Row 3 ($R_3$), we can instantly eliminate the non-zero entries in Column 1 below the top-left entry.
 
 ---
 
 #### Step 2: Step-by-Step Row Elimination
 
 ##### Operation 1: $R_2 \leftarrow R_2 - R_1$
-* **Goal:** Create a zero at position $(2,1)$.
-* **Calculation:**
+- **Goal:** Create a zero at position $(2,1)$.
+- **Calculation:**
   $$
   R_2 - R_1 = [1 - 1,\; 3 - 2,\; 4 - 3] = [0,\; 1,\; 1]
   $$
-* **Determinant Impact:** Row addition ($k = -1$). **Determinant remains unchanged.**
+- **Determinant Impact:** Row addition ($k = -1$). **Determinant remains unchanged.**
 
 The matrix becomes:
 
@@ -60,12 +60,12 @@ A_1 = \begin{pmatrix} 1 & 2 & 3 \\ 0 & 1 & 1 \\ 1 & 4 & 6 \end{pmatrix} \implies
 $$
 
 ##### Operation 2: $R_3 \leftarrow R_3 - R_1$
-* **Goal:** Create a zero at position $(3,1)$.
-* **Calculation:**
+- **Goal:** Create a zero at position $(3,1)$.
+- **Calculation:**
   $$
   R_3 - R_1 = [1 - 1,\; 4 - 2,\; 6 - 3] = [0,\; 2,\; 3]
   $$
-* **Determinant Impact:** Row addition ($k = -1$). **Determinant remains unchanged.**
+- **Determinant Impact:** Row addition ($k = -1$). **Determinant remains unchanged.**
 
 The matrix becomes:
 
@@ -86,12 +86,12 @@ $$
 Row 2 now has pivot entry $1$ at $(2,2)$, and Row 3 has entry $2$ at $(3,2)$. We eliminate position $(3,2)$ using Row 2.
 
 ##### Operation 3: $R_3 \leftarrow R_3 - 2 R_2$
-* **Goal:** Create a zero at position $(3,2)$.
-* **Calculation:**
+- **Goal:** Create a zero at position $(3,2)$.
+- **Calculation:**
   $$
   R_3 - 2 R_2 = [0 - 2(0),\; 2 - 2(1),\; 3 - 2(1)] = [0,\; 0,\; 1]
   $$
-* **Determinant Impact:** Row addition ($k = -2$). **Determinant remains unchanged.**
+- **Determinant Impact:** Row addition ($k = -2$). **Determinant remains unchanged.**
 
 The resulting upper triangular matrix $A_3$ is:
 
@@ -105,7 +105,7 @@ $$
 
 Matrix $A_3$ is now in **upper triangular form** (all entries strictly below the main diagonal are zeros).
 
-The determinant of any upper triangular matrix is the product of its main diagonal entries:[cite: 1]
+The determinant of any upper triangular matrix is the product of its main diagonal entries:
 
 $$
 \det A_3 = a_{11} \cdot a_{22} \cdot a_{33} = 1 \cdot 1 \cdot 1 = 1
@@ -151,7 +151,7 @@ Both approaches give $\det A = 1$.
    $$\det A = 1$$
 
 2. **Operations that do not change the determinant:**
-   All operations of the form $R_i \leftarrow R_i + k R_j$ (such as $R_2 - R_1$, $R_3 - R_1$, and $R_3 - 2 R_2$) leave the determinant completely unchanged.[cite: 1]
+   All operations of the form $R_i \leftarrow R_i + k R_j$ (such as $R_2 - R_1$, $R_3 - R_1$, and $R_3 - 2 R_2$) leave the determinant completely unchanged.
 
 3. **Strategic Advantage:**
-   Creating zeros systematically turns a multi-term multiplication into a simple product of diagonal elements ($1 \cdot 1 \cdot 1 = 1$), eliminating computational errors.[cite: 1]
+   Creating zeros systematically turns a multi-term multiplication into a simple product of diagonal elements ($1 \cdot 1 \cdot 1 = 1$), eliminating computational errors.

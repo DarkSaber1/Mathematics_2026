@@ -7,10 +7,10 @@ $$
 A = \begin{pmatrix} 1 & 2 & 0 \\ 0 & 3 & 1 \\ 2 & 1 & 1 \end{pmatrix}
 $$
 
-1. Compute $\det A$ using a direct calculation method.[cite: 1]
-2. Form a new matrix $B$ by swapping the first row ($R_1$) and the second row ($R_2$) of matrix $A$.[cite: 1]
-3. Predict the value of $\det B$ using a fundamental property of determinants.[cite: 1]
-4. Explicitly calculate $\det B$ to verify your prediction step-by-step.[cite: 1]
+1. Compute $\det A$ using a direct calculation method.
+2. Form a new matrix $B$ by swapping the first row ($R_1$) and the second row ($R_2$) of matrix $A$.
+3. Predict the value of $\det B$ using a fundamental property of determinants.
+4. Explicitly calculate $\det B$ to verify your prediction step-by-step.
 
 ---
 
@@ -30,17 +30,17 @@ $$
 
 where each cofactor $C_{ij} = (-1)^{i+j} \det(M_{ij})$, and $M_{ij}$ is the $2 \times 2$ submatrix remaining after deleting row $i$ and column $j$.
 
-* **First Term ($a_{11} = 1$):**
+- **First Term ($a_{11} = 1$):**
   $$
   C_{11} = (-1)^{1+1} \cdot \det \begin{pmatrix} 3 & 1 \\ 1 & 1 \end{pmatrix} = +1 \cdot ((3 \cdot 1) - (1 \cdot 1)) = 1 \cdot (3 - 1) = 2
   $$
 
-* **Second Term ($a_{12} = 2$):**
+- **Second Term ($a_{12} = 2$):**
   $$
   C_{12} = (-1)^{1+2} \cdot \det \begin{pmatrix} 0 & 1 \\ 2 & 1 \end{pmatrix} = -1 \cdot ((0 \cdot 1) - (1 \cdot 2)) = -1 \cdot (0 - 2) = 2
   $$
 
-* **Third Term ($a_{13} = 0$):**
+- **Third Term ($a_{13} = 0$):**
   $$
   C_{13} = (-1)^{1+3} \cdot \det \begin{pmatrix} 0 & 3 \\ 2 & 1 \end{pmatrix} = +1 \cdot ((0 \cdot 1) - (3 \cdot 2)) = 1 \cdot (0 - 6) = -6
   $$
@@ -68,21 +68,21 @@ $$
 \end{array}
 $$
 
-* **Primary Diagonals (Top-Left to Bottom-Right):**
-  * $P_1 = 1 \cdot 3 \cdot 1 = 3$[cite: 1]
-  * $P_2 = 2 \cdot 1 \cdot 2 = 4$[cite: 1]
-  * $P_3 = 0 \cdot 0 \cdot 1 = 0$[cite: 1]
+- **Primary Diagonals (Top-Left to Bottom-Right):**
+  - $P_1 = 1 \cdot 3 \cdot 1 = 3$
+  - $P_2 = 2 \cdot 1 \cdot 2 = 4$
+  - $P_3 = 0 \cdot 0 \cdot 1 = 0$
   
   $$\text{Sum}_{\text{primary}} = 3 + 4 + 0 = 7$$
 
-* **Secondary Diagonals (Bottom-Left to Top-Right):**
-  * $S_1 = 2 \cdot 3 \cdot 0 = 0$[cite: 1]
-  * $S_2 = 1 \cdot 1 \cdot 1 = 1$[cite: 1]
-  * $S_3 = 1 \cdot 0 \cdot 2 = 0$[cite: 1]
+- **Secondary Diagonals (Bottom-Left to Top-Right):**
+  - $S_1 = 2 \cdot 3 \cdot 0 = 0$
+  - $S_2 = 1 \cdot 1 \cdot 1 = 1$
+  - $S_3 = 1 \cdot 0 \cdot 2 = 0$
   
   $$\text{Sum}_{\text{secondary}} = 0 + 1 + 0 = 1$$
 
-* **Final Calculation:**
+- **Final Calculation:**
   $$
   \det A = \text{Sum}_{\text{primary}} - \text{Sum}_{\text{secondary}} = 7 - 1 = 6
   $$
@@ -93,7 +93,7 @@ Both techniques give $\det A = 6$.
 
 #### Step 2: Constructing Matrix $B$
 
-Swapping the first row ($R_1 = [1, 2, 0]$) and the second row ($R_2 = [0, 3, 1]$) of matrix $A$ yields:[cite: 1]
+Swapping the first row ($R_1 = [1, 2, 0]$) and the second row ($R_2 = [0, 3, 1]$) of matrix $A$ yields:
 
 $$
 B = \begin{pmatrix} 0 & 3 & 1 \\ 1 & 2 & 0 \\ 2 & 1 & 1 \end{pmatrix}
@@ -104,7 +104,7 @@ $$
 #### Step 3: Theoretical Prediction of $\det B$
 
 **Determinant Property (Row Swap Rule):**
-> *Swapping any two rows (or columns) of a square matrix multiplies its determinant by $-1$.*[cite: 1]
+> *Swapping any two rows (or columns) of a square matrix multiplies its determinant by $-1$.*
 
 Mathematically:
 
@@ -128,17 +128,17 @@ $$
 \det B = b_{11} C_{11} + b_{12} C_{12} + b_{13} C_{13}
 $$
 
-* **Term 1 ($b_{11} = 0$):**
+- **Term 1 ($b_{11} = 0$):**
   $$
   0 \cdot \det \begin{pmatrix} 2 & 0 \\ 1 & 1 \end{pmatrix} = 0
   $$
 
-* **Term 2 ($b_{12} = 3$):**
+- **Term 2 ($b_{12} = 3$):**
   $$
   (-1)^{1+2} \cdot 3 \cdot \det \begin{pmatrix} 1 & 0 \\ 2 & 1 \end{pmatrix} = -3 \cdot ((1 \cdot 1) - (0 \cdot 2)) = -3 \cdot (1 - 0) = -3
   $$
 
-* **Term 3 ($b_{13} = 1$):**
+- **Term 3 ($b_{13} = 1$):**
   $$
   (-1)^{1+3} \cdot 1 \cdot \det \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix} = +1 \cdot ((1 \cdot 1) - (2 \cdot 2)) = +1 \cdot (1 - 4) = -3
   $$
@@ -156,8 +156,8 @@ The direct calculation yields $\det B = -6$, which matches the theoretical predi
 ### Conclusion and Key Takeaways
 
 1. **Determinant Values:**
-   * $\det A = 6$
-   * $\det B = -6$
+  - $\det A = 6$
+  - $\det B = -6$
 
 2. **Core Property Verified:**
    Interchanging two rows flips the sign of the determinant while maintaining its absolute value ($|-6| = |6| = 6$).

@@ -1,15 +1,15 @@
 ## Exercise 4. Triangular Matrix
 
 ### Problem Definition
-Given the $3 \times 3$ matrix:[cite: 1]
+Given the $3 \times 3$ matrix:
 
 $$
 T = \begin{pmatrix} 2 & 4 & 1 \\ 0 & -3 & 5 \\ 0 & 0 & 7 \end{pmatrix}
 $$
 
-1. Without performing full expansion (such as Sarrus' Rule or general cofactor expansion), compute $\det T$.[cite: 1]
-2. State the general rule for computing the determinant of an arbitrary triangular matrix.[cite: 1]
-3. Provide a clear mathematical explanation of why this rule holds, using this specific example.[cite: 1]
+1. Without performing full expansion (such as Sarrus' Rule or general cofactor expansion), compute $\det T$.
+2. State the general rule for computing the determinant of an arbitrary triangular matrix.
+3. Provide a clear mathematical explanation of why this rule holds, using this specific example.
 
 ---
 
@@ -27,22 +27,22 @@ T = \begin{pmatrix}
 \end{pmatrix}
 $$
 
-* The entries strictly below the main diagonal (namely $t_{21} = 0$, $t_{31} = 0$, and $t_{32} = 0$) are all equal to zero.
-* Therefore, $T$ is an **upper triangular matrix**.
+- The entries strictly below the main diagonal (namely $t_{21} = 0$, $t_{31} = 0$, and $t_{32} = 0$) are all equal to zero.
+- Therefore, $T$ is an **upper triangular matrix**.
 
 ---
 
 #### Step 2: Direct Computation using the Triangular Matrix Property
 
 **Property of Triangular Matrices:**
-> The determinant of any upper triangular, lower triangular, or diagonal matrix is simply the product of the entries located on its main diagonal.[cite: 1]
+> The determinant of any upper triangular, lower triangular, or diagonal matrix is simply the product of the entries located on its main diagonal.
 
 Identifying the main diagonal entries of $T$:
-* $t_{11} = 2$
-* $t_{22} = -3$
-* $t_{33} = 7$
+- $t_{11} = 2$
+- $t_{22} = -3$
+- $t_{33} = 7$
 
-Applying the product rule directly:[cite: 1]
+Applying the product rule directly:
 
 $$
 \det T = t_{11} \cdot t_{22} \cdot t_{33} = (2) \cdot (-3) \cdot (7)
@@ -72,17 +72,17 @@ $$
 $$
 
 ##### Types of Triangular Matrices
-* **Upper Triangular Matrix:** All entries below the main diagonal are zero.
+- **Upper Triangular Matrix:** All entries below the main diagonal are zero.
   $$
   \det \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\ 0 & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & a_{nn} \end{pmatrix} = a_{11} \cdot a_{22} \cdots a_{nn}
   $$
 
-* **Lower Triangular Matrix:** All entries above the main diagonal are zero.
+- **Lower Triangular Matrix:** All entries above the main diagonal are zero.
   $$
   \det \begin{pmatrix} a_{11} & 0 & \cdots & 0 \\ a_{21} & a_{22} & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ a_{n1} & a_{n2} & \cdots & a_{nn} \end{pmatrix} = a_{11} \cdot a_{22} \cdots a_{nn}
   $$
 
-* **Diagonal Matrix:** All non-diagonal entries are zero.
+- **Diagonal Matrix:** All non-diagonal entries are zero.
   $$
   \det \begin{pmatrix} a_{11} & 0 & \cdots & 0 \\ 0 & a_{22} & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & a_{nn} \end{pmatrix} = a_{11} \cdot a_{22} \cdots a_{nn}
   $$
